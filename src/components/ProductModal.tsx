@@ -200,9 +200,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   
                   {/* Category & Brand */}
                   <div className="flex items-center justify-between gap-2">
-                    <span className="px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
-                      {product.brand}
-                    </span>
+                    {product.brand ? (
+                      <span className="px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
+                        {product.brand}
+                      </span>
+                    ) : <span />}
                     <span className="text-[11px] sm:text-xs text-stone-500 font-medium">
                       {getCategoryLabel(product.category, t)} {product.subcategory && `• ${product.subcategory}`}
                     </span>
@@ -213,20 +215,30 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                     {product.name}
                   </h2>
 
-                  {/* Rating & Volume */}
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
-                    <div className="flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 text-amber-800 font-semibold">
-                      <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                      <span>{product.rating}</span>
-                      <span className="text-amber-600 text-[11px]">({product.reviewCount} {t.reviewsCount})</span>
+                  {/* Rating & Volume - Only if present in DB */}
+                  {((typeof product.rating === 'number' && product.rating > 0) || product.volumeSize) && (
+                    <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
+                      {typeof product.rating === 'number' && product.rating > 0 && (
+                        <div className="flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 text-amber-800 font-semibold">
+                          <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
+                          <span>{product.rating}</span>
+                          {typeof product.reviewCount === 'number' && product.reviewCount > 0 && (
+                            <span className="text-amber-600 text-[11px]">({product.reviewCount} {t.reviewsCount})</span>
+                          )}
+                        </div>
+                      )}
+
+                      {typeof product.rating === 'number' && product.rating > 0 && product.volumeSize && (
+                        <span className="text-stone-300">•</span>
+                      )}
+
+                      {product.volumeSize && (
+                        <span className="text-stone-600 font-medium text-xs sm:text-sm">
+                          {product.volumeSize}
+                        </span>
+                      )}
                     </div>
-
-                    <span className="text-stone-300">•</span>
-
-                    <span className="text-stone-600 font-medium text-xs sm:text-sm">
-                      {product.volumeSize}
-                    </span>
-                  </div>
+                  )}
 
                   {/* Price & Stock Display Box */}
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-stone-50 border border-stone-200 flex items-center justify-between">

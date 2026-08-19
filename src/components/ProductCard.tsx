@@ -83,10 +83,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="p-3.5 sm:p-5 flex flex-col flex-1 justify-between gap-2.5 sm:gap-3">
         <div>
           {/* Brand & Volume */}
-          <div className="flex items-center justify-between text-xs text-stone-500 mb-1">
-            <span className="font-bold text-rose-700 uppercase tracking-wider text-[11px]">{product.brand}</span>
-            <span className="text-[11px]">{product.volumeSize}</span>
-          </div>
+          {(product.brand || product.volumeSize) && (
+            <div className="flex items-center justify-between text-xs text-stone-500 mb-1">
+              {product.brand ? (
+                <span className="font-bold text-rose-700 uppercase tracking-wider text-[11px]">{product.brand}</span>
+              ) : <span />}
+              {product.volumeSize && <span className="text-[11px]">{product.volumeSize}</span>}
+            </div>
+          )}
 
           {/* Product Title */}
           <h3 
@@ -96,14 +100,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {product.name}
           </h3>
 
-          {/* Rating */}
-          <div className="flex items-center gap-1.5 mt-1.5">
-            <div className="flex items-center text-amber-400">
-              <Star className="w-3.5 h-3.5 fill-current" />
+          {/* Rating - rendered only if present in DB */}
+          {typeof product.rating === 'number' && product.rating > 0 && (
+            <div className="flex items-center gap-1.5 mt-1.5">
+              <div className="flex items-center text-amber-400">
+                <Star className="w-3.5 h-3.5 fill-current" />
+              </div>
+              <span className="text-xs font-bold text-stone-800">{product.rating}</span>
+              {typeof product.reviewCount === 'number' && product.reviewCount > 0 && (
+                <span className="text-xs text-stone-400">({product.reviewCount})</span>
+              )}
             </div>
-            <span className="text-xs font-bold text-stone-800">{product.rating}</span>
-            <span className="text-xs text-stone-400">({product.reviewCount})</span>
-          </div>
+          )}
         </div>
 
         {/* Price & Call Action Row */}
@@ -120,7 +128,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               )}
             </div>
             <p className="text-[10px] sm:text-[11px] text-emerald-700 font-medium truncate">
-              {product.stock > 0 ? `${product.stock} ${t.availableInBole}` : t.outOfStockBadge}
+              {product.stock > 0 ? `${product.stock} ${t.availableInStore}` : t.outOfStockBadge}
             </p>
           </div>
 

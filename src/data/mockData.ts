@@ -3,20 +3,20 @@ import type { Product, ShopDetails } from '../types/product';
 export const SHOP_INFO: ShopDetails = {
   name: "Faya Qality Cosmetics",
   tagline: "Pure Radiance & Luxury Beauty Essentials",
-  shortBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Addis Ababa.",
+  shortBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Hawassa.",
   fullStory: "Founded with an unwavering passion for authentic self-care, Faya Qality Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected, stored in temperature-regulated facilities, and tracked live in our inventory.",
   phone: "+251 91 123 4567",
   whatsapp: "+251 91 123 4567",
   telegram: "@GTlode",
   email: "contact@fayaqalitycosmetics.com",
   location: {
-    city: "Addis Ababa, Ethiopia",
-    area: "Bole Subcity",
-    address: "Cameroon Street, Next to Edna Mall / Medhanialem Area",
-    landmark: "Behind Bole Medhanialem Cathedral, Ground Floor",
-    mallFloor: "Ground Floor, Shop G-14",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.548408992019!2d38.78440937589311!3d9.013627089228836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a7304f479d%3A0xe541c88102a76f2f!2sBole%20Medhane%20Alem%20Cathedral!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set",
-    googleMapsUrl: "https://maps.google.com/?q=Bole+Medhane+Alem+Cathedral+Addis+Ababa"
+    city: "Hawassa, Ethiopia",
+    area: "Hawassa",
+    address: "Hawassa City, Sidama Region, Ethiopia",
+    landmark: "Hawassa City Center",
+    mallFloor: "Ground Floor, Faya Qality Boutique",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63259.04368153406!2d38.4520304!3d7.0503986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b145a47738f615%3A0xc3163fa95208f4c2!2sHawassa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set",
+    googleMapsUrl: "https://maps.google.com/?q=Hawassa+Ethiopia"
   },
   hours: [
     { days: "Monday - Friday", hours: "9:00 AM – 8:00 PM" },
@@ -42,7 +42,7 @@ export const SHOP_INFO: ShopDetails = {
     {
       icon: "Truck",
       title: "Fast City-Wide Delivery",
-      description: "Same-day delivery across Addis Ababa or convenient pickup at our Bole boutique."
+      description: "Same-day delivery across Hawassa or convenient pickup at our boutique."
     }
   ]
 };

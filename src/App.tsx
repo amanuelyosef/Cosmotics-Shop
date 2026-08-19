@@ -7,12 +7,12 @@ import { ProductModal } from './components/ProductModal';
 import { ShopInfo } from './components/ShopInfo';
 import { LocationContact } from './components/LocationContact';
 import { Footer } from './components/Footer';
-import { MOCK_PRODUCTS, SHOP_INFO } from './data/mockData';
+import { SHOP_INFO } from './data/mockData';
 import type { Product, ProductCategory } from './types/product';
 import { subscribeToProducts } from './services/productService';
 
 function StorefrontContent() {
-  const [products, setProducts] = useState<Product[]>(MOCK_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -21,12 +21,10 @@ function StorefrontContent() {
     // Real-time synchronization with Firestore DB
     const unsubscribe = subscribeToProducts(
       (firestoreProducts) => {
-        if (firestoreProducts && firestoreProducts.length > 0) {
-          setProducts(firestoreProducts);
-        }
+        setProducts(firestoreProducts);
       },
       (error) => {
-        console.warn('Using local fallback due to connection/permission event:', error);
+        console.warn('Firestore connection event:', error);
       }
     );
 

@@ -14,7 +14,7 @@ interface ShopInfoProps {
   onExplore: () => void;
 }
 
-export const ShopInfo: React.FC<ShopInfoProps> = ({ onExplore }) => {
+export const ShopInfo: React.FC<ShopInfoProps> = ({ shopInfo, onExplore }) => {
   const { t } = useLanguage();
 
   return (
@@ -47,8 +47,8 @@ export const ShopInfo: React.FC<ShopInfoProps> = ({ onExplore }) => {
 
             {/* Accent badge (Tablet/Desktop) */}
             <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-rose-100 hidden sm:block">
-              <p className="font-serif text-xl font-bold text-rose-700">Addis Ababa</p>
-              <p className="text-xs text-stone-500 font-medium">Bole Boutique</p>
+              <p className="font-serif text-xl font-bold text-rose-700">{shopInfo.location.city.split(',')[0] || 'Hawassa'}</p>
+              <p className="text-xs text-stone-500 font-medium">{shopInfo.location.area || 'Boutique'}</p>
             </div>
           </div>
 

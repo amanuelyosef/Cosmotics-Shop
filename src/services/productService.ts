@@ -6,7 +6,6 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase';
 import type { Product, ProductCategory, FirestoreProduct } from '../types/product';
-import { MOCK_PRODUCTS } from '../data/mockData';
 
 const PRODUCTS_COLLECTION = 'products';
 
@@ -16,10 +15,17 @@ const PRODUCTS_COLLECTION = 'products';
  * like `boughtPrice` so it is NEVER exposed or rendered in the storefront.
  */
 export function mapFirestoreDocToProduct(docId: string, data: Partial<FirestoreProduct> & Record<string, any>): Product {
-  // Normalize images from either `image` or `images` array
-  const rawImages = Array.isArray(data.image) 
-    ? data.image 
-    : (Array.isArray(data.images) ? data.images : []);
+  // Normalize images from either `image` (string or array) or `images` array
+  const rawImageVal = (data as any).image;
+  const rawImagesVal = (data as any).images;
+  let rawImages: string[] = [];
+  if (Array.isArray(rawImageVal)) {
+    rawImages = rawImageVal.filter(Boolean);
+  } else if (typeof rawImageVal === 'string' && rawImageVal.trim()) {
+    rawImages = [rawImageVal.trim()];
+  } else if (Array.isArray(rawImagesVal)) {
+    rawImages = rawImagesVal.filter(Boolean);
+  }
 
   const fallbackImage = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80';
   const images = rawImages.length > 0 ? rawImages : [fallbackImage];
@@ -41,24 +47,24 @@ export function mapFirestoreDocToProduct(docId: string, data: Partial<FirestoreP
   return {
     id: docId || data.id || '',
     name: data.name || 'Untitled Product',
-    brand: data.brand || (data.name ? data.name.split(' ')[0] : 'Faya Qality'),
+    brand: data.brand || '',
     category,
     subcategory: data.subcategory || undefined,
     // Use sellingPrice as the customer retail price
-    price: typeof data.sellingPrice === 'number' ? data.sellingPrice : (data.price || 0),
-    originalPrice: data.originalPrice,
+    price: typeof data.sellingPrice === 'number' ? data.sellingPrice : (typeof data.price === 'number' ? data.price : 0),
+    originalPrice: typeof data.originalPrice === 'number' ? data.originalPrice : undefined,
     currency: data.currency || 'ETB',
     // Use quantity as current in-store stock
-    stock: typeof data.quantity === 'number' ? data.quantity : (data.stock ?? 0),
-    rating: data.rating || 4.9,
-    reviewCount: data.reviewCount || 100,
+    stock: typeof data.quantity === 'number' ? data.quantity : (typeof data.stock === 'number' ? data.stock : 0),
+    rating: typeof data.rating === 'number' ? data.rating : undefined,
+    reviewCount: typeof data.reviewCount === 'number' ? data.reviewCount : undefined,
     description: data.description || '',
-    keyBenefits: Array.isArray(data.keyBenefits) ? data.keyBenefits : [],
-    ingredients: Array.isArray(data.ingredients) ? data.ingredients : [],
-    usageInstructions: data.usageInstructions || '',
-    volumeSize: data.volumeSize || '',
-    skinTypes: Array.isArray(data.skinTypes) ? data.skinTypes : [],
-    tags: Array.isArray(data.tags) ? data.tags : [],
+    keyBenefits: Array.isArray(data.keyBenefits) ? data.keyBenefits.filter(Boolean) : [],
+    ingredients: Array.isArray(data.ingredients) ? data.ingredients.filter(Boolean) : undefined,
+    usageInstructions: data.usageInstructions || undefined,
+    volumeSize: data.volumeSize || undefined,
+    skinTypes: Array.isArray(data.skinTypes) ? data.skinTypes.filter(Boolean) : undefined,
+    tags: Array.isArray(data.tags) ? data.tags.filter(Boolean) : undefined,
     images,
     featured: Boolean(data.featured)
     // NOTE: `boughtPrice`, `createdAt`, `updatedAt` are deliberately not included here!
@@ -66,7 +72,7 @@ export function mapFirestoreDocToProduct(docId: string, data: Partial<FirestoreP
 }
 
 /**
- * Fetch all products once from Firestore with fallback to mock data.
+ * Fetch all products once from Firestore.
  */
 export async function getProducts(): Promise<Product[]> {
   try {
@@ -75,20 +81,19 @@ export async function getProducts(): Promise<Product[]> {
     const snapshot = await getDocs(q);
 
     if (snapshot.empty) {
-      console.warn('No products found in Firestore. Falling back to local mock data.');
-      return MOCK_PRODUCTS;
+      return [];
     }
 
     return snapshot.docs.map(doc => mapFirestoreDocToProduct(doc.id, doc.data()));
   } catch (error) {
     console.error('Error fetching products from Firestore:', error);
-    return MOCK_PRODUCTS;
+    return [];
   }
 }
 
 /**
  * Real-time listener for Firestore products collection.
- * Automatically synchronizes changes and falls back to mock data on error.
+ * Automatically synchronizes changes directly from Firestore DB.
  */
 export function subscribeToProducts(
   onUpdate: (products: Product[]) => void,
@@ -100,12 +105,6 @@ export function subscribeToProducts(
     return onSnapshot(
       productsRef,
       (snapshot) => {
-        if (snapshot.empty) {
-          console.warn('Firestore products collection is empty. Using mock data fallback.');
-          onUpdate(MOCK_PRODUCTS);
-          return;
-        }
-
         const products: Product[] = snapshot.docs.map((doc) => 
           mapFirestoreDocToProduct(doc.id, doc.data())
         );
@@ -115,13 +114,12 @@ export function subscribeToProducts(
       (error) => {
         console.error('Firestore real-time subscription error:', error);
         if (onError) onError(error);
-        // Provide fallback so UI remains functional
-        onUpdate(MOCK_PRODUCTS);
+        onUpdate([]);
       }
     );
   } catch (err) {
     console.error('Failed to setup Firestore subscription:', err);
-    onUpdate(MOCK_PRODUCTS);
+    onUpdate([]);
     return () => {};
   }
 }

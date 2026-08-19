@@ -42,8 +42,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     'Sun Care'
   ];
 
-  // Quick popular search tags
-  const quickTags = ['Sunscreen', 'COSRX', 'Serum', 'Lipstick', 'Perfume', 'Ceramides', 'Olaplex'];
+  // Quick popular search tags derived from catalog brands/categories
+  const quickTags = useMemo(() => {
+    const brands = Array.from(new Set(products.map(p => p.brand).filter(Boolean))) as string[];
+    if (brands.length >= 3) return brands.slice(0, 6);
+    return ['Skincare', 'Sun Care', 'Haircare', 'Fragrance', 'Makeup'];
+  }, [products]);
 
   // Filter and sort logic - AUTOMATICALLY HIDES OUT OF STOCK PRODUCTS
   const filteredProducts = useMemo(() => {
@@ -58,16 +62,16 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         return false;
       }
 
-      // 3. Search Query Filter (Title, Brand, Category, Description, Ingredients, Skin Types)
+      // 3. Search Query Filter (Title, Brand, Category, Description, Ingredients, Tags)
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase().trim();
-        const matchesName = item.name.toLowerCase().includes(query);
-        const matchesBrand = item.brand.toLowerCase().includes(query);
-        const matchesCategory = item.category.toLowerCase().includes(query);
+        const matchesName = (item.name || '').toLowerCase().includes(query);
+        const matchesBrand = (item.brand || '').toLowerCase().includes(query);
+        const matchesCategory = (item.category || '').toLowerCase().includes(query);
         const matchesSubcategory = item.subcategory ? item.subcategory.toLowerCase().includes(query) : false;
-        const matchesDesc = item.description.toLowerCase().includes(query);
-        const matchesIngredients = item.ingredients.some(ing => ing.toLowerCase().includes(query));
-        const matchesTags = item.tags.some(tag => tag.toLowerCase().includes(query));
+        const matchesDesc = (item.description || '').toLowerCase().includes(query);
+        const matchesIngredients = Array.isArray(item.ingredients) ? item.ingredients.some(ing => ing.toLowerCase().includes(query)) : false;
+        const matchesTags = Array.isArray(item.tags) ? item.tags.some(tag => tag.toLowerCase().includes(query)) : false;
 
         if (!matchesName && !matchesBrand && !matchesCategory && !matchesSubcategory && !matchesDesc && !matchesIngredients && !matchesTags) {
           return false;
@@ -78,7 +82,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     }).sort((a, b) => {
       if (sortBy === 'price-low') return a.price - b.price;
       if (sortBy === 'price-high') return b.price - a.price;
-      if (sortBy === 'rating') return b.rating - a.rating;
+      if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
       if (sortBy === 'stock-high') return b.stock - a.stock;
       if (sortBy === 'newest') return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
       return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
