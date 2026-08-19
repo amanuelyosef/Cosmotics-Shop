@@ -13,7 +13,7 @@ export const TRANSLATIONS = {
     locationTop: "ሀዋሳ፣ ኢትዮጵያ",
     
     // Navbar
-    brandTitle: "ፋያ ኳሊቲ",
+    brandTitle: "ፋያ ቃሊቲ",
     brandSubtitle: "ኮስሞቲክስ",
     searchPlaceholder: "የፀሐይ መከላከያ፣ ሴረም፣ ሽቶ፣ ሊፕስቲክ ይፈልጉ...",
     catalogNav: "የምርት ዝርዝር",
@@ -39,7 +39,7 @@ export const TRANSLATIONS = {
     heroHeading1: "የተፈጥሮ ውበትዎን ",
     heroHeadingAccent: "በኦሪጅናል ምርቶች",
     heroHeading2: " ያድምቁ",
-    heroSubtext: "ወደ ፋያ ኳሊቲ ኮስሞቲክስ እንኳን ደህና መጡ! በሀዋሳ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
+    heroSubtext: "ወደ ፋያ ቃሊቲ ኮስሞቲክስ እንኳን ደህና መጡ! በሀዋሳ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
     heroLiveStockTitle: "በሱቃችን ያሉ ምርቶች ብቻ",
     heroLiveStockDesc: "ያለቁ ዕቃዎች ስለማይታዩ፣ አሁን በሱቃችን ውስጥ ለመግዛትና ለመረከብ ዝግጁ የሆኑትን ብቻ ይመለከታሉ።",
     heroBrowseBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
@@ -95,16 +95,16 @@ export const TRANSLATIONS = {
     modalOrderTelegram: "በቴሌግራም ይዘዙ",
     modalCallDirect: "በስልክ ይደውሉ",
     modalPickupNote: "በሀዋሳ በሚገኘው ሱቃችን መጥተው መውሰድ ወይም በዴሊቨሪ ማዘዝ ይችላሉ።",
-    modalAuthBoxTitle: "የፋያ ኳሊቲ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
+    modalAuthBoxTitle: "የፋያ ቃሊቲ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
     modalAuthBoxDesc: "100% ኦሪጅናል ባች ኮድ ያለው። ጥራቱን በጠበቀ መልኩ በሱቃችን የተያዘ።",
     modalFullScreenBtn: "ምስሉን በትልቅ ይመልከቱ",
     modalFullScreenHint: "ምስሉን በትልቅ ለማየት ይጫኑ",
     modalCloseFullScreen: "ዝጋ",
 
     // Shop Info
-    aboutTag: "ስለ ፋያ ኳሊቲ ኮስሞቲክስ",
+    aboutTag: "ስለ ፋያ ቃሊቲ ኮስሞቲክስ",
     aboutTitle: "ኦሪጅናል የውበት እና የቆዳ እንክብካቤ ምርቶች መገኛ።",
-    aboutStory: "ፋያ ኳሊቲ ኮስሞቲክስ 100% ኦሪጅናል የሆኑ የቆዳ፣ የፀጉር፣ የሜካፕ እና የሽቶ ምርቶችን ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች በቀጥታ በማምጣት ለደንበኞቹ ያቀርባል። በሱቃችን የሚገኝ ማንኛውም ዕቃ ጥራቱና ኦሪጅናልነቱ የተረጋገጠ ነው።",
+    aboutStory: "ፋያ ቃሊቲ ኮስሞቲክስ 100% ኦሪጅናል የሆኑ የቆዳ፣ የፀጉር፣ የሜካፕ እና የሽቶ ምርቶችን ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች በቀጥታ በማምጣት ለደንበኞቹ ያቀርባል። በሱቃችን የሚገኝ ማንኛውም ዕቃ ጥራቱና ኦሪጅናልነቱ የተረጋገጠ ነው።",
     aboutPromiseTitle: "100% ኦሪጅናልና የተረጋገጡ የውበት ምርቶች",
     aboutPerk1Title: "100% ኦሪጅናል ምርቶች",
     aboutPerk1Desc: "ቀጥታ ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች የተረከብናቸው ኦሪጅናል ምርቶች።",
@@ -122,7 +122,7 @@ export const TRANSLATIONS = {
     locationSubtext: "በሀዋሳ የሚገኘውን ሱቃችንን መጥተው ይጎብኙ ወይም በስልክ እና በቴሌግራም ያነጋግሩን።",
     locationCardTitle: "የሱቃችን መገኛ",
     locationCardDesc: "ሀዋሳ ከተማ፣ ሲዳማ ክልል፣ ኢትዮጵያ",
-    locationFloor: "ፋያ ኳሊቲ ሱቅ",
+    locationFloor: "ፋያ ቃሊቲ ሱቅ",
     hoursTitle: "ሱቃችን ክፍት የሚሆንበት ሰዓት",
     hoursWeekdaysLabel: "ከሰኞ - አርብ",
     hoursWeekdaysTime: "ከጠዋቱ 3:00 – ማታ 2:00",
@@ -141,7 +141,7 @@ export const TRANSLATIONS = {
     footerNavTitle: "አቅጣጫዎች",
     footerVisitTitle: "ሱቃችንን ይጎብኙ",
     footerBackToTop: "ወደ ላይ ተመለስ",
-    footerCopyright: "መብቱ በህግ የተጠበቀ ነው። ፋያ ኳሊቲ ኮስሞቲክስ።",
+    footerCopyright: "መብቱ በህግ የተጠበቀ ነው። ፋያ ቃሊቲ ኮስሞቲክስ።",
     telegramChannel: "የቴሌግራም ቻናላችን"
   },
 
