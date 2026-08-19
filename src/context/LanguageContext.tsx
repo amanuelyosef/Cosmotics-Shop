@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Default language is 'am' (Amharic) when website is opened!
   const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem('bedhane_preferred_lang');
+    const saved = localStorage.getItem('faya_preferred_lang') || localStorage.getItem('bedhane_preferred_lang');
     if (saved === 'am' || saved === 'om' || saved === 'en') {
       return saved;
     }
@@ -23,7 +23,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('bedhane_preferred_lang', lang);
+    localStorage.setItem('faya_preferred_lang', lang);
     document.documentElement.lang = lang;
   };
 

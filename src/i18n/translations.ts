@@ -13,7 +13,7 @@ export const TRANSLATIONS = {
     locationTop: "ቦሌ መድኃኔዓለም፣ አዲስ አበባ",
     
     // Navbar
-    brandTitle: "በድሃኔ",
+    brandTitle: "ፋያ ኳሊቲ",
     brandSubtitle: "ኮስሞቲክስ",
     searchPlaceholder: "የፀሐይ መከላከያ፣ ሴረም፣ ሽቶ፣ ሊፕስቲክ ይፈልጉ...",
     catalogNav: "የምርት ዝርዝር",
@@ -39,7 +39,7 @@ export const TRANSLATIONS = {
     heroHeading1: "የተፈጥሮ ውበትዎን ",
     heroHeadingAccent: "በኦሪጅናል ምርቶች",
     heroHeading2: " ያድምቁ",
-    heroSubtext: "ወደ በዳኔ ኮስሞቲክስ እንኳን ደህና መጡ! በአዲስ አበባ ቦሌ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
+    heroSubtext: "ወደ ፋያ ኳሊቲ ኮስሞቲክስ እንኳን ደህና መጡ! በአዲስ አበባ ቦሌ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
     heroLiveStockTitle: "በሱቃችን ያሉ ምርቶች ብቻ",
     heroLiveStockDesc: "ያለቁ ዕቃዎች ስለማይታዩ፣ አሁን በሱቃችን ውስጥ ለመግዛትና ለመረከብ ዝግጁ የሆኑትን ብቻ ይመለከታሉ።",
     heroBrowseBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
@@ -95,16 +95,16 @@ export const TRANSLATIONS = {
     modalOrderTelegram: "በቴሌግራም ይዘዙ",
     modalCallDirect: "በስልክ ይደውሉ",
     modalPickupNote: "ቦሌ መድኃኔዓለም በሚገኘው ሱቃችን መጥተው መውሰድ ወይም አዲስ አበባ ውስጥ በዴሊቨሪ ማዘዝ ይችላሉ።",
-    modalAuthBoxTitle: "የበድሃኔ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
+    modalAuthBoxTitle: "የፋያ ኳሊቲ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
     modalAuthBoxDesc: "100% ኦሪጅናል ባች ኮድ ያለው። ጥራቱን በጠበቀ መልኩ በቦሌ ሱቃችን የተያዘ።",
     modalFullScreenBtn: "ምስሉን በትልቅ ይመልከቱ",
     modalFullScreenHint: "ምስሉን በትልቅ ለማየት ይጫኑ",
     modalCloseFullScreen: "ዝጋ",
 
     // Shop Info
-    aboutTag: "ስለ በዳኔ ኮስሞቲክስ",
+    aboutTag: "ስለ ፋያ ኳሊቲ ኮስሞቲክስ",
     aboutTitle: "ኦሪጅናል የውበት እና የቆዳ እንክብካቤ ምርቶች መገኛ።",
-    aboutStory: "በዳኔ ኮስሞቲክስ 100% ኦሪጅናል የሆኑ የቆዳ፣ የፀጉር፣ የሜካፕ እና የሽቶ ምርቶችን ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች በቀጥታ በማምጣት ለደንበኞቹ ያቀርባል። በሱቃችን የሚገኝ ማንኛውም ዕቃ ጥራቱና ኦሪጅናልነቱ የተረጋገጠ ነው።",
+    aboutStory: "ፋያ ኳሊቲ ኮስሞቲክስ 100% ኦሪጅናል የሆኑ የቆዳ፣ የፀጉር፣ የሜካፕ እና የሽቶ ምርቶችን ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች በቀጥታ በማምጣት ለደንበኞቹ ያቀርባል። በሱቃችን የሚገኝ ማንኛውም ዕቃ ጥራቱና ኦሪጅናልነቱ የተረጋገጠ ነው።",
     aboutPromiseTitle: "100% ኦሪጅናልና የተረጋገጡ የውበት ምርቶች",
     aboutPerk1Title: "100% ኦሪጅናል ምርቶች",
     aboutPerk1Desc: "ቀጥታ ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች የተረከብናቸው ኦሪጅናል ምርቶች።",
@@ -141,7 +141,7 @@ export const TRANSLATIONS = {
     footerNavTitle: "አቅጣጫዎች",
     footerVisitTitle: "ሱቃችንን ይጎብኙ",
     footerBackToTop: "ወደ ላይ ተመለስ",
-    footerCopyright: "መብቱ በህግ የተጠበቀ ነው። በድሃኔ ኮስሞቲክስ።",
+    footerCopyright: "መብቱ በህግ የተጠበቀ ነው። ፋያ ኳሊቲ ኮስሞቲክስ።",
     telegramChannel: "የቴሌግራም ቻናላችን"
   },
 
@@ -151,7 +151,7 @@ export const TRANSLATIONS = {
     locationTop: "Boolee Madhaani’aalam, Finfinnee",
     
     // Navbar
-    brandTitle: "Bedhane",
+    brandTitle: "Faya Qality",
     brandSubtitle: "Cosmetics",
     searchPlaceholder: "Eegumsa aduu, seeramii, urgooftuu, lippistiki barbaadaa...",
     catalogNav: "Tarree Meeshaalee",
@@ -177,7 +177,7 @@ export const TRANSLATIONS = {
     heroHeading1: "Miidhagina Keessan ",
     heroHeadingAccent: "Qoricha Amanamaadhaan",
     heroHeading2: " Calaqqisiisaa.",
-    heroSubtext: "Baga gara Bedhane Cosmetics nagaan dhuftan! Finfinnee Booleetti qoricha gogaa, urgooftuu, meekaappii fi rifeensaa qulqullina qaban asitti argattu.",
+    heroSubtext: "Baga gara Faya Qality Cosmetics nagaan dhuftan! Finfinnee Booleetti qoricha gogaa, urgooftuu, meekaappii fi rifeensaa qulqullina qaban asitti argattu.",
     heroLiveStockTitle: "Wabii Kuusaa Kallattii",
     heroLiveStockDesc: "Meeshaaleen dhumatan ofumaan waan dhokfatamaniif, wantoota ammaan tana bitachuuf qophii ta'an qofa argitu.",
     heroBrowseBtn: "Meeshaalee Kuusaa Keessa Jiran Ilaalaa",
@@ -233,16 +233,16 @@ export const TRANSLATIONS = {
     modalOrderTelegram: "Telegraamiin Ammumma Ajajaa",
     modalCallDirect: "Bilbilaan Nu Quunnamaa",
     modalPickupNote: "Boolee Madhaani’aalam duuba suuqii keenyarraa fudhachuu ykn Finfinnee guututti guyyuma sana akka isiniif ergamu gochuu dandeessu.",
-    modalAuthBoxTitle: "Wabii Qulqullinaa Bedhane Cosmetics",
+    modalAuthBoxTitle: "Wabii Qulqullinaa Faya Qality Cosmetics",
     modalAuthBoxDesc: "Lakkoofsa baachii faabrikaa %100 dhugaa qaba. Suuqii keenya Booleetti haala ho'iinsa isaanii eeggateen kuufama.",
     modalFullScreenBtn: "Gargaarsa Guutuu",
     modalFullScreenHint: "Fakkicha bal'inaan ilaaluuf cuqqaalaa",
     modalCloseFullScreen: "Cufaa",
 
     // Shop Info
-    aboutTag: "Waa'ee Bedhane Cosmetics",
+    aboutTag: "Waa'ee Faya Qality Cosmetics",
     aboutTitle: "Iddoo Miidhaginni Dhugaa Kunuunsa Qulqullina Qabuun Wal-argu.",
-    aboutStory: "Bedhane Cosmetics maamiltoota isaatiif qoricha gogaa, rifeensaa fi miidhaginaa qulqullina ol-aanaa qabu kallattiin warshaalee beekamoo addunyaarraa fida. Meeshaan suuqii keenya keessatti argamu hundi of-eeggannoodhaan qoratamee maamiltootaaf dhiyaata.",
+    aboutStory: "Faya Qality Cosmetics maamiltoota isaatiif qoricha gogaa, rifeensaa fi miidhaginaa qulqullina ol-aanaa qabu kallattiin warshaalee beekamoo addunyaarraa fida. Meeshaan suuqii keenya keessatti argamu hundi of-eeggannoodhaan qoratamee maamiltootaaf dhiyaata.",
     aboutPromiseTitle: "Qoricha Miidhaginaa %100 Dhugaa fi Qoratame",
     aboutPerk1Title: "Meeshaalee %100 Dhugaa",
     aboutPerk1Desc: "Raabsitoota addunyaa beekamoo fi heyyama qaban irraa kallattiin kan dhufan.",
@@ -279,7 +279,7 @@ export const TRANSLATIONS = {
     footerNavTitle: "Qajeelcha",
     footerVisitTitle: "Suuqii Keenya Daawwadhaa",
     footerBackToTop: "Gara Olitti Deebi'i",
-    footerCopyright: "Mirgi hundi seeraan eegamaadha. Bedhane Cosmetics.",
+    footerCopyright: "Mirgi hundi seeraan eegamaadha. Faya Qality Cosmetics.",
     telegramChannel: "Chaanalii Telegraamii Keenya"
   },
 
@@ -289,7 +289,7 @@ export const TRANSLATIONS = {
     locationTop: "Bole Medhanialem, Addis Ababa",
     
     // Navbar
-    brandTitle: "Bedhane",
+    brandTitle: "Faya Qality",
     brandSubtitle: "Cosmetics",
     searchPlaceholder: "Search sunscreen, serums, perfumes, lipstick...",
     catalogNav: "Shop Catalog",
@@ -315,7 +315,7 @@ export const TRANSLATIONS = {
     heroHeading1: "Elevate Your Glow with ",
     heroHeadingAccent: "Pure Elegance",
     heroHeading2: " & Care.",
-    heroSubtext: "Welcome to Bedhane Cosmetics — your premier beauty sanctuary in Addis Ababa. Browse verified in-stock skincare, designer fragrances, viral makeup, and haircare essentials.",
+    heroSubtext: "Welcome to Faya Qality Cosmetics — your premier beauty sanctuary in Addis Ababa. Browse verified in-stock skincare, designer fragrances, viral makeup, and haircare essentials.",
     heroLiveStockTitle: "Live Inventory Guarantee",
     heroLiveStockDesc: "Out-of-stock items are automatically hidden so you only see what is ready for immediate store pickup or delivery.",
     heroBrowseBtn: "Browse In-Stock Products",
@@ -371,16 +371,16 @@ export const TRANSLATIONS = {
     modalOrderTelegram: "Order via Telegram",
     modalCallDirect: "Call Boutique",
     modalPickupNote: "Pick up at Bole Medhanialem or request same-day Addis Ababa delivery.",
-    modalAuthBoxTitle: "Bedhane Authenticity Guarantee",
+    modalAuthBoxTitle: "Faya Qality Authenticity Guarantee",
     modalAuthBoxDesc: "100% verified genuine batch code. Stored in climate-controlled conditions at our Bole store.",
     modalFullScreenBtn: "View Fullscreen",
     modalFullScreenHint: "Click image to view in fullscreen",
     modalCloseFullScreen: "Close",
 
     // Shop Info
-    aboutTag: "About Bedhane Cosmetics",
+    aboutTag: "About Faya Qality Cosmetics",
     aboutTitle: "Where True Radiance Meets Authentic Care.",
-    aboutStory: "Bedhane Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected and tracked live in our inventory.",
+    aboutStory: "Faya Qality Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected and tracked live in our inventory.",
     aboutPromiseTitle: "100% Genuine Certified Skincare & Beauty",
     aboutPerk1Title: "100% Genuine & Authentic",
     aboutPerk1Desc: "Directly imported from verified authorized brand distributors with certified batches.",
@@ -417,7 +417,7 @@ export const TRANSLATIONS = {
     footerNavTitle: "Navigation",
     footerVisitTitle: "Visit Our Boutique",
     footerBackToTop: "Back to Top",
-    footerCopyright: "All rights reserved. Bedhane Cosmetics.",
+    footerCopyright: "All rights reserved. Faya Qality Cosmetics.",
     telegramChannel: "Our Telegram Channel"
   }
 };

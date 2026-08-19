@@ -17,10 +17,10 @@ export const Hero: React.FC<HeroProps> = ({
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="relative overflow-hidden w-full max-w-full bg-gradient-to-b from-rose-50/60 via-amber-50/30 to-stone-50 pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 border-b border-rose-100/60">
+    <section id="hero" className="relative overflow-hidden w-full max-w-full bg-gradient-to-b from-rose-50/70 via-champagne-50/20 to-stone-50 pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 border-b border-rose-100/60">
       {/* Decorative background blurs contained inside overflow-hidden */}
       <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-rose-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-0 w-60 sm:w-80 h-60 sm:h-80 bg-amber-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-60 sm:w-80 h-60 sm:h-80 bg-champagne-200/35 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
@@ -29,8 +29,8 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left w-full min-w-0">
             
             {/* Trust Pill */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-rose-100/80 border border-rose-200/80 text-rose-900 text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs max-w-full">
-              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-600 shrink-0" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/90 border border-rose-200 text-rose-900 text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs max-w-full">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-700 shrink-0" />
               <span className="truncate">{t.heroTrustPill}</span>
             </div>
 
@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({
             </p>
 
             {/* Real-time stock guarantee banner */}
-            <div className="bg-white/85 backdrop-blur-sm border border-emerald-200/80 rounded-2xl p-3.5 sm:p-4 shadow-xs flex items-center gap-3 max-w-lg mx-auto lg:mx-0 text-left w-full">
+            <div className="bg-white/90 backdrop-blur-sm border border-emerald-200/80 rounded-2xl p-3.5 sm:p-4 shadow-xs flex items-center gap-3 max-w-lg mx-auto lg:mx-0 text-left w-full">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0 text-emerald-700 font-bold">
                 <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
               </div>
@@ -71,9 +71,9 @@ export const Hero: React.FC<HeroProps> = ({
 
               <button
                 onClick={onViewLocation}
-                className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-white hover:bg-rose-50/80 active:scale-95 text-stone-800 font-semibold text-xs sm:text-sm border border-stone-200 hover:border-rose-300 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-white hover:bg-rose-50 active:scale-95 text-stone-800 font-semibold text-xs sm:text-sm border border-stone-200 hover:border-rose-300 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
-                <MapPin className="w-4 h-4 text-rose-600" />
+                <MapPin className="w-4 h-4 text-rose-700" />
                 <span>{t.heroLocationBtn}</span>
               </button>
             </div>
@@ -104,19 +104,26 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white group w-full">
                 <img
                   src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80"
-                  alt="Bedhane Cosmetics Showcase"
+                  alt="Faya Qality Cosmetics Showcase"
                   className="w-full h-72 sm:h-96 lg:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent" />
 
-                {/* Floating In-Store Badge */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg text-stone-900">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-rose-700 uppercase">{t.heroBadgeFeatured}</span>
-                      <h3 className="font-serif font-bold text-stone-900 text-sm sm:text-base">Bedhane Cosmetics</h3>
+                {/* Floating In-Store Badge with Logo */}
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-stone-200/80 shadow-2xl text-stone-900">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <img 
+                        src="/logo.png" 
+                        alt="Faya Qality Logo" 
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-contain ring-1 ring-stone-200 shadow-xs bg-white shrink-0" 
+                      />
+                      <div className="min-w-0">
+                        <span className="inline-block text-[9px] sm:text-[10px] font-bold tracking-wider text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded uppercase">{t.heroBadgeFeatured}</span>
+                        <h3 className="font-serif font-bold text-stone-900 text-sm sm:text-base leading-tight truncate mt-0.5">Faya Qality Cosmetics</h3>
+                      </div>
                     </div>
-                    <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-semibold flex items-center gap-1">
+                    <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-semibold flex items-center gap-1 shrink-0">
                       <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-ping" />
                       {t.heroBadgeLive}
                     </span>
@@ -125,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Floating Pill Top Right (Tablet/Desktop only) */}
-              <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl shadow-xl border border-rose-100 hidden sm:flex items-center gap-2.5">
+              <div className="absolute top-3 right-3 bg-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl shadow-xl border border-rose-100 hidden sm:flex items-center gap-2.5">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold shrink-0">
                   <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>

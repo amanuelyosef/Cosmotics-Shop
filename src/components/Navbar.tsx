@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const handleCategoryClick = (cat: ProductCategory) => {
     onSelectCategory(cat);
     setMobileMenuOpen(false);
-    onNavigate('catalog');
+    onNavigate('catalog-results-header');
   };
 
   const handleNavClick = (sectionId: string) => {
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-rose-100/80 shadow-xs transition-all">
       {/* Top Notification / Store Banner */}
-      <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-rose-950 text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4">
+      <div className="bg-gradient-to-r from-stone-950 via-[#2d1b19] to-stone-950 text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-rose-950/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2 truncate mx-auto sm:mx-0">
             <span className="inline-flex items-center justify-center p-0.5 rounded-full bg-rose-500/20 text-rose-300 shrink-0">
@@ -111,10 +111,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Logo & Name */}
           <button 
             onClick={() => handleNavClick('hero')} 
-            className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-hidden cursor-pointer shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 text-left group focus:outline-hidden cursor-pointer shrink-0"
           >
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-amber-300 flex items-center justify-center shadow-md shadow-rose-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            <div className="relative shrink-0">
+              <img 
+                src="/logo.png" 
+                alt="Faya Qality Cosmetics Logo" 
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full ring-2 ring-champagne-300/80 shadow-md group-hover:scale-105 group-hover:ring-rose-400 transition-all duration-200 bg-white" 
+              />
             </div>
             <div>
               <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-stone-900 group-hover:text-rose-900 transition-colors leading-none block">

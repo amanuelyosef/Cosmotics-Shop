@@ -133,7 +133,7 @@ export const LocationContact: React.FC<LocationContactProps> = ({ shopInfo }) =>
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Bedhane Cosmetics Store Location Map"
+            title="Faya Qality Cosmetics Store Location Map"
             className="w-full h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[460px]"
           />
         </div>

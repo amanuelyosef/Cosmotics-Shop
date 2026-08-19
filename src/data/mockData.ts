@@ -1,14 +1,14 @@
 import type { Product, ShopDetails } from '../types/product';
 
 export const SHOP_INFO: ShopDetails = {
-  name: "Bedhane Cosmetics",
+  name: "Faya Qality Cosmetics",
   tagline: "Pure Radiance & Luxury Beauty Essentials",
   shortBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Addis Ababa.",
-  fullStory: "Founded with an unwavering passion for authentic self-care, Bedhane Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected, stored in temperature-regulated facilities, and tracked live in our inventory.",
+  fullStory: "Founded with an unwavering passion for authentic self-care, Faya Qality Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected, stored in temperature-regulated facilities, and tracked live in our inventory.",
   phone: "+251 91 123 4567",
   whatsapp: "+251 91 123 4567",
   telegram: "@GTlode",
-  email: "contact@bedhanecosmetics.com",
+  email: "contact@fayaqalitycosmetics.com",
   location: {
     city: "Addis Ababa, Ethiopia",
     area: "Bole Subcity",

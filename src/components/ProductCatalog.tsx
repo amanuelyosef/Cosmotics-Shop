@@ -235,7 +235,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       </div>
 
       {/* Catalog Results Counter Bar */}
-      <div id="catalog-results-header" className="scroll-mt-28 flex items-center justify-between mb-4 sm:mb-6 px-1 w-full">
+      <div id="catalog-results-header" className="scroll-mt-36 sm:scroll-mt-44 flex items-center justify-between mb-4 sm:mb-6 px-1 w-full">
         <div className="text-xs sm:text-sm font-medium text-stone-700 truncate pr-2">
           {t.showingCount} <span className="font-bold text-stone-900">{filteredProducts.length}</span> {t.productsUnit}
           {selectedCategory !== 'All' && <span> {t.inCategory} <strong>{getCategoryLabel(selectedCategory, t)}</strong></span>}

@@ -29,16 +29,19 @@ export const ShopInfo: React.FC<ShopInfoProps> = ({ onExplore }) => {
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white w-full">
               <img
                 src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=80"
-                alt="Bedhane Cosmetics Boutique Experience"
+                alt="Faya Qality Cosmetics Boutique Experience"
                 className="w-full h-64 sm:h-80 md:h-[380px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/20 to-transparent" />
               
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white">
-                <span className="px-3 py-1 rounded-full bg-rose-600/90 text-[11px] font-semibold tracking-wider uppercase mb-2 inline-block shadow-xs">
-                  Bedhane
-                </span>
-                <p className="font-serif text-base sm:text-xl font-bold">{t.aboutPromiseTitle}</p>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white flex items-end justify-between">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-rose-700/90 text-[11px] font-semibold tracking-wider uppercase mb-2 inline-block shadow-xs">
+                    Faya Qality
+                  </span>
+                  <p className="font-serif text-base sm:text-xl font-bold">{t.aboutPromiseTitle}</p>
+                </div>
+                <img src="/logo.png" alt="Faya Qality Logo" className="w-10 h-10 rounded-full bg-white p-0.5 ring-2 ring-champagne-300 shadow-md hidden sm:block shrink-0 mb-1" />
               </div>
             </div>
 

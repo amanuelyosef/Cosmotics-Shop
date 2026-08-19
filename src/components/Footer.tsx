@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  Sparkles, 
   MapPin, 
   Phone, 
   Mail, 
@@ -48,9 +47,13 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Brand Col */}
           <div className="sm:col-span-2 lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-300 flex items-center justify-center text-white shadow-md">
-                <Sparkles className="w-5 h-5" />
+            <div className="flex items-center gap-3">
+              <div className="relative shrink-0">
+                <img 
+                  src="/logo.png" 
+                  alt="Faya Qality Cosmetics Logo" 
+                  className="w-12 h-12 object-contain rounded-full bg-white p-0.5 ring-2 ring-champagne-400/70 shadow-lg" 
+                />
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold tracking-tight text-white block">
@@ -80,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <button
                     onClick={() => {
                       onSelectCategory(cat);
-                      onNavigate('catalog');
+                      onNavigate('catalog-results-header');
                     }}
                     className="hover:text-rose-400 transition-colors text-stone-400 cursor-pointer py-0.5 text-left"
                   >

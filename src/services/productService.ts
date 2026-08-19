@@ -41,7 +41,7 @@ export function mapFirestoreDocToProduct(docId: string, data: Partial<FirestoreP
   return {
     id: docId || data.id || '',
     name: data.name || 'Untitled Product',
-    brand: data.brand || (data.name ? data.name.split(' ')[0] : 'Bedhane'),
+    brand: data.brand || (data.name ? data.name.split(' ')[0] : 'Faya Qality'),
     category,
     subcategory: data.subcategory || undefined,
     // Use sellingPrice as the customer retail price
