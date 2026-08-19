@@ -16,7 +16,7 @@ interface LocationContactProps {
 
 export const LocationContact: React.FC<LocationContactProps> = ({ shopInfo }) => {
   const { t } = useLanguage();
-  const cleanTelegram = (shopInfo.telegram || '@GTlode').replace('@', '');
+  const cleanTelegram = (shopInfo.telegram || '@obsinanit').replace('@', '');
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   return (

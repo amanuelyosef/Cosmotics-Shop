@@ -9,8 +9,8 @@ export const LANGUAGE_OPTIONS: LanguageOption[] = [
 export const TRANSLATIONS = {
   am: {
     // Top banner
-    topBanner: "100% ኦሪጅናል የውበትና የቆዳ እንክብካቤ ምርቶች • አሁን በሀዋሳ ሱቃችን የሚገኙ",
-    locationTop: "ሀዋሳ፣ ኢትዮጵያ",
+    topBanner: "100% ኦሪጅናል የውበትና የቆዳ እንክብካቤ ምርቶች • አሁን በሀዋሳ ፒያሳ ሱቃችን የሚገኙ",
+    locationTop: "ፒያሳ፣ ሀዋሳ",
     
     // Navbar
     brandTitle: "ፋያ ቃሊቲ",
@@ -39,16 +39,16 @@ export const TRANSLATIONS = {
     heroHeading1: "የተፈጥሮ ውበትዎን ",
     heroHeadingAccent: "በኦሪጅናል ምርቶች",
     heroHeading2: " ያድምቁ",
-    heroSubtext: "ወደ ፋያ ቃሊቲ ኮስሞቲክስ እንኳን ደህና መጡ! በሀዋሳ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
+    heroSubtext: "ወደ ፋያ ቃሊቲ ኮስሞቲክስ እንኳን ደህና መጡ! በሀዋሳ ፒያሳ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
     heroLiveStockTitle: "በሱቃችን ያሉ ምርቶች ብቻ",
     heroLiveStockDesc: "ያለቁ ዕቃዎች ስለማይታዩ፣ አሁን በሱቃችን ውስጥ ለመግዛትና ለመረከብ ዝግጁ የሆኑትን ብቻ ይመለከታሉ።",
     heroBrowseBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
-    heroLocationBtn: "የሀዋሳ ሱቃችንን ይጎብኙ",
+    heroLocationBtn: "የፒያሳ ሱቃችንን ይጎብኙ",
     heroStat1: "100%",
     heroStat1Label: "ኦሪጅናል ምርቶች",
     heroStat2: "በዕለቱ",
     heroStat2Label: "ፈጣን ዴሊቨሪ",
-    heroStat3: "ሀዋሳ",
+    heroStat3: "ፒያሳ፣ ሀዋሳ",
     heroStat3Label: "ዋና ሱቅ",
     heroBadgeFeatured: "ተወዳጅ ብራንዶች",
     heroBadgeLive: "በሱቅ ውስጥ አለ",
@@ -59,7 +59,7 @@ export const TRANSLATIONS = {
     // Catalog & Stock
     catalogTag: "የተመረጡ የውበት ምርቶች",
     catalogTitle: "አሁን በሱቃችን የሚገኙ ምርቶች",
-    catalogSubtext: "በሀዋሳ ሱቃችን በአካል የሚገኙ ምርቶች ቀጥታ ዝርዝር። ያለቁ ምርቶች አይታዩም።",
+    catalogSubtext: "በሀዋሳ ፒያሳ ሱቃችን በአካል የሚገኙ ምርቶች ቀጥታ ዝርዝር። ያለቁ ምርቶች አይታዩም።",
     sortLabel: "አስተካክል:",
     sortFeatured: "ተወዳጅ ምርቶች",
     sortPriceLow: "ዋጋ፡ ከዝቅተኛ ወደ ከፍተኛ",
@@ -94,7 +94,7 @@ export const TRANSLATIONS = {
     modalBestFor: "ተስማሚ የቆዳ አይነቶች:",
     modalOrderTelegram: "በቴሌግራም ይዘዙ",
     modalCallDirect: "በስልክ ይደውሉ",
-    modalPickupNote: "በሀዋሳ በሚገኘው ሱቃችን መጥተው መውሰድ ወይም በዴሊቨሪ ማዘዝ ይችላሉ።",
+    modalPickupNote: "በሀዋሳ ፒያሳ በሚገኘው ሱቃችን መጥተው መውሰድ ወይም በዴሊቨሪ ማዘዝ ይችላሉ።",
     modalAuthBoxTitle: "የፋያ ቃሊቲ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
     modalAuthBoxDesc: "100% ኦሪጅናል ባች ኮድ ያለው። ጥራቱን በጠበቀ መልኩ በሱቃችን የተያዘ።",
     modalFullScreenBtn: "ምስሉን በትልቅ ይመልከቱ",
@@ -113,16 +113,16 @@ export const TRANSLATIONS = {
     aboutPerk3Title: "ነፃ የቆዳና የውበት ምክር",
     aboutPerk3Desc: "እንደ ቆዳዎ አይነት የሚስማማዎትን ምርት በባለሙያዎቻችን ያማክሩ።",
     aboutPerk4Title: "ፈጣን የከተማ ውስጥ ዴሊቨሪ",
-    aboutPerk4Desc: "ሀዋሳ ውስጥ በዕለቱ በዴሊቨሪ እናደርሳለን ወይም ከሱቃችን መጥተው መውሰድ ይችላሉ።",
+    aboutPerk4Desc: "ሀዋሳ ውስጥ በዕለቱ በዴሊቨሪ እናደርሳለን ወይም ከፒያሳ ሱቃችን መጥተው መውሰድ ይችላሉ።",
     aboutCtaBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
 
     // Location & Contact
-    locationTag: "አድራሻና የመገኛ ቦታ",
+    locationTag: "አድራሻና የመገኛ ቦታ (ፒያሳ፣ ሀዋሳ)",
     locationTitle: "የሱቃችን አድራሻ እና ክፍት የሚሆንበት ሰዓት",
-    locationSubtext: "በሀዋሳ የሚገኘውን ሱቃችንን መጥተው ይጎብኙ ወይም በስልክ እና በቴሌግራም ያነጋግሩን።",
+    locationSubtext: "በሀዋሳ ፒያሳ የሚገኘውን ሱቃችንን መጥተው ይጎብኙ ወይም በስልክ እና በቴሌግራም ያነጋግሩን።",
     locationCardTitle: "የሱቃችን መገኛ",
-    locationCardDesc: "ሀዋሳ ከተማ፣ ሲዳማ ክልል፣ ኢትዮጵያ",
-    locationFloor: "ፋያ ቃሊቲ ሱቅ",
+    locationCardDesc: "ፒያሳ፣ ሀዋሳ ከተማ፣ ሲዳማ ክልል፣ ኢትዮጵያ",
+    locationFloor: "ምድር ቤት፣ ፒያሳ ፋያ ቃሊቲ ሱቅ",
     hoursTitle: "ሱቃችን ክፍት የሚሆንበት ሰዓት",
     hoursWeekdaysLabel: "ከሰኞ - አርብ",
     hoursWeekdaysTime: "ከጠዋቱ 3:00 – ማታ 2:00",
@@ -135,7 +135,7 @@ export const TRANSLATIONS = {
     openMapBtn: "አድራሻውን በGoogle Maps ይክፈቱ",
 
     // Footer
-    footerBio: "በሀዋሳ ጥራት ያላቸውን ዓለም አቀፍ የቆዳ፣ የፀጉር፣ የሜካፕና የሽቶ ምርቶችን የሚያገኙበት አስተማማኝ የውበት ማዕከል።",
+    footerBio: "በሀዋሳ ፒያሳ ጥራት ያላቸውን ዓለም አቀፍ የቆዳ፣ የፀጉር፣ የሜካፕና የሽቶ ምርቶችን የሚያገኙበት አስተማማኝ የውበት ማዕከል።",
     footerLiveNotice: "✨ በድረ-ገጻችን ላይ በሱቃችን ውስጥ በአካል የሚገኙ ምርቶች ብቻ ተዘርዝረዋል።",
     footerCatTitle: "የውበት ምድቦች",
     footerNavTitle: "አቅጣጫዎች",
@@ -147,8 +147,8 @@ export const TRANSLATIONS = {
 
   om: {
     // Top banner
-    topBanner: "Qoricha Miidhaginaa %100 Dhugaa Ta'e • Tarree Kuusaa Kallattii (Hawaasaatti Ammumma Argamu)",
-    locationTop: "Hawaasaa, Itoophiyaa",
+    topBanner: "Qoricha Miidhaginaa %100 Dhugaa Ta'e • Tarree Kuusaa Kallattii (Piyaasaa Hawaasaatti Argamu)",
+    locationTop: "Piyaasaa, Hawaasaa",
     
     // Navbar
     brandTitle: "Faya Qality",
@@ -177,16 +177,16 @@ export const TRANSLATIONS = {
     heroHeading1: "Miidhagina Keessan ",
     heroHeadingAccent: "Qoricha Amanamaadhaan",
     heroHeading2: " Calaqqisiisaa.",
-    heroSubtext: "Baga gara Faya Qality Cosmetics nagaan dhuftan! Hawaasaatti qoricha gogaa, urgooftuu, meekaappii fi rifeensaa qulqullina qaban asitti argattu.",
+    heroSubtext: "Baga gara Faya Qality Cosmetics nagaan dhuftan! Piyaasaa Hawaasaatti qoricha gogaa, urgooftuu, meekaappii fi rifeensaa qulqullina qaban asitti argattu.",
     heroLiveStockTitle: "Wabii Kuusaa Kallattii",
     heroLiveStockDesc: "Meeshaaleen dhumatan ofumaan waan dhokfatamaniif, wantoota ammaan tana bitachuuf qophii ta'an qofa argitu.",
     heroBrowseBtn: "Meeshaalee Kuusaa Keessa Jiran Ilaalaa",
-    heroLocationBtn: "Suuqii Hawaasaa Keenya Daawwadhaa",
+    heroLocationBtn: "Suuqii Piyaasaa Keenya Daawwadhaa",
     heroStat1: "%100",
     heroStat1Label: "Meeshaalee Dhugaa",
     heroStat2: "Guyyuma Sana",
     heroStat2Label: "Geessuuf Hawaasaa",
-    heroStat3: "Hawaasaa",
+    heroStat3: "Piyaasaa, Hawaasaa",
     heroStat3Label: "Suuqii Ijoo",
     heroBadgeFeatured: "Biraandota Filatamo",
     heroBadgeLive: "Kuusaa Keessa Jira",
@@ -197,7 +197,7 @@ export const TRANSLATIONS = {
     // Catalog & Stock
     catalogTag: "Meeshaalee Miidhaginaa Filataman",
     catalogTitle: "Meeshaalee Amma Kuusaa Keessa Jiran",
-    catalogSubtext: "Suuqii keenya Hawaasaatti meeshaalee kallattiin argaman. Meeshaaleen dhumatan ofumaan dhokfatamaniiru.",
+    catalogSubtext: "Suuqii keenya Piyaasaa Hawaasaatti meeshaalee kallattiin argaman. Meeshaaleen dhumatan ofumaan dhokfatamaniiru.",
     sortLabel: "Tartiibsi:",
     sortFeatured: "Kan Filataman",
     sortPriceLow: "Gatii: Gadi-aanaa gara Ol-aanaatti",
@@ -232,7 +232,7 @@ export const TRANSLATIONS = {
     modalBestFor: "Gosa Gogaa Barbaachisu:",
     modalOrderTelegram: "Telegraamiin Ammumma Ajajaa",
     modalCallDirect: "Bilbilaan Nu Quunnamaa",
-    modalPickupNote: "Hawaasaa suuqii keenyarraa fudhachuu ykn Hawaasaa keessatti guyyuma sana akka isiniif ergamu gochuu dandeessu.",
+    modalPickupNote: "Piyaasaa Hawaasaa suuqii keenyarraa fudhachuu ykn Hawaasaa keessatti guyyuma sana akka isiniif ergamu gochuu dandeessu.",
     modalAuthBoxTitle: "Wabii Qulqullinaa Faya Qality Cosmetics",
     modalAuthBoxDesc: "Lakkoofsa baachii faabrikaa %100 dhugaa qaba. Suuqii keenya keessatti haala qabbanaawaa eeggateen kuufama.",
     modalFullScreenBtn: "Gargaarsa Guutuu",
@@ -251,16 +251,16 @@ export const TRANSLATIONS = {
     aboutPerk3Title: "Gorsa Miidhaginaa Tolaa",
     aboutPerk3Desc: "Gosa gogaa keessaniif kan ta'u ogeessota keenya irraa gorsa argadhaa.",
     aboutPerk4Title: "Dhiyeessa Magaalaa Saffisaa",
-    aboutPerk4Desc: "Hawaasaa guututti guyyuma sana ni ergina yookiin suuqii keenyarraa fudhachuu dandeessu.",
+    aboutPerk4Desc: "Hawaasaa guututti guyyuma sana ni ergina yookiin suuqii Piyaasaarraa fudhachuu dandeessu.",
     aboutCtaBtn: "Meeshaalee Amma Jiran Ilaalaa",
 
     // Location & Contact
-    locationTag: "Teessoo fi Iddoo",
+    locationTag: "Teessoo fi Iddoo (Piyaasaa, Hawaasaa)",
     locationTitle: "Teessoo Suuqii fi Sa'aatii Banamaa",
-    locationSubtext: "Suuqii keenya Hawaasaa daawwadhaa yookiin bilbilaan fi Telegraamiidhaan nu quunnamaa.",
+    locationSubtext: "Suuqii keenya Piyaasaa Hawaasaa daawwadhaa yookiin bilbilaan fi Telegraamiidhaan nu quunnamaa.",
     locationCardTitle: "Suuqii Qabatamaa",
-    locationCardDesc: "Magaalaa Hawaasaa, Naannoo Sidaamaa, Itoophiyaa",
-    locationFloor: "Suuqii Faya Qality",
+    locationCardDesc: "Piyaasaa, Magaalaa Hawaasaa, Naannoo Sidaamaa, Itoophiyaa",
+    locationFloor: "Dacheerraa, Suuqii Faya Qality Piyaasaa",
     hoursTitle: "Sa'aatii Banama Suuqichaa",
     hoursWeekdaysLabel: "Wiixata - Jimaata",
     hoursWeekdaysTime: "Ganama 3:00 – Galgala 2:00",
@@ -273,7 +273,7 @@ export const TRANSLATIONS = {
     openMapBtn: "Google Maps irratti Bani",
 
     // Footer
-    footerBio: "Hawaasaatti qoricha gogaa, rifeensaa, meekaappii fi urgooftuu addunyaa qulqullina qaban kan itti argattan.",
+    footerBio: "Piyaasaa Hawaasaatti qoricha gogaa, rifeensaa, meekaappii fi urgooftuu addunyaa qulqullina qaban kan itti argattan.",
     footerLiveNotice: "✨ Weebsaayitii keenyarra meeshaaleen suuqii keessa qabatamaan jiran qofatu tarreeffame.",
     footerCatTitle: "Ramaddiiwwan Miidhaginaa",
     footerNavTitle: "Qajeelcha",
@@ -285,8 +285,8 @@ export const TRANSLATIONS = {
 
   en: {
     // Top banner
-    topBanner: "100% Authentic Luxury Cosmetics & Skincare • Real-time In-Stock Catalog (Hawassa)",
-    locationTop: "Hawassa, Ethiopia",
+    topBanner: "100% Authentic Luxury Cosmetics & Skincare • Real-time In-Stock Catalog (Piassa, Hawassa)",
+    locationTop: "Piassa, Hawassa",
     
     // Navbar
     brandTitle: "Faya Qality",
@@ -315,16 +315,16 @@ export const TRANSLATIONS = {
     heroHeading1: "Elevate Your Glow with ",
     heroHeadingAccent: "Pure Elegance",
     heroHeading2: " & Care.",
-    heroSubtext: "Welcome to Faya Qality Cosmetics — your premier beauty sanctuary in Hawassa. Browse verified in-stock skincare, designer fragrances, viral makeup, and haircare essentials.",
+    heroSubtext: "Welcome to Faya Qality Cosmetics — your premier beauty sanctuary in Piassa, Hawassa. Browse verified in-stock skincare, designer fragrances, viral makeup, and haircare essentials.",
     heroLiveStockTitle: "Live Inventory Guarantee",
     heroLiveStockDesc: "Out-of-stock items are automatically hidden so you only see what is ready for immediate store pickup or delivery.",
     heroBrowseBtn: "Browse In-Stock Products",
-    heroLocationBtn: "Visit Hawassa Boutique",
+    heroLocationBtn: "Visit Piassa Boutique",
     heroStat1: "100%",
     heroStat1Label: "Genuine Products",
     heroStat2: "Same Day",
     heroStat2Label: "Hawassa Delivery",
-    heroStat3: "Hawassa",
+    heroStat3: "Piassa, Hawassa",
     heroStat3Label: "Central Boutique",
     heroBadgeFeatured: "Featured Brand",
     heroBadgeLive: "Live In Stock",
@@ -335,7 +335,7 @@ export const TRANSLATIONS = {
     // Catalog & Stock
     catalogTag: "Curated Beauty Catalog",
     catalogTitle: "Available In-Stock Essentials",
-    catalogSubtext: "Real-time physical stock tracked from our Hawassa boutique. Out-of-stock items are automatically hidden.",
+    catalogSubtext: "Real-time physical stock tracked from our Piassa, Hawassa boutique. Out-of-stock items are automatically hidden.",
     sortLabel: "Sort By:",
     sortFeatured: "Featured / Best Match",
     sortPriceLow: "Price: Low to High",
@@ -370,7 +370,7 @@ export const TRANSLATIONS = {
     modalBestFor: "Best For:",
     modalOrderTelegram: "Order via Telegram",
     modalCallDirect: "Call Boutique",
-    modalPickupNote: "Pick up at our Hawassa boutique or request fast delivery across Hawassa.",
+    modalPickupNote: "Pick up at our Piassa, Hawassa boutique or request fast delivery across Hawassa.",
     modalAuthBoxTitle: "Faya Qality Authenticity Guarantee",
     modalAuthBoxDesc: "100% verified genuine batch code. Stored in climate-controlled conditions at our boutique.",
     modalFullScreenBtn: "View Fullscreen",
@@ -389,16 +389,16 @@ export const TRANSLATIONS = {
     aboutPerk3Title: "Complimentary Beauty Advice",
     aboutPerk3Desc: "Get personalized skin analysis and routine recommendations from our in-store specialists.",
     aboutPerk4Title: "Fast City-Wide Delivery",
-    aboutPerk4Desc: "Same-day delivery across Hawassa or convenient pickup at our boutique.",
+    aboutPerk4Desc: "Same-day delivery across Hawassa or convenient pickup at our Piassa boutique.",
     aboutCtaBtn: "Explore Current In-Stock Selection",
 
     // Location & Contact
-    locationTag: "Find Us in Hawassa",
+    locationTag: "Find Us in Piassa, Hawassa",
     locationTitle: "Store Location & Operating Hours",
-    locationSubtext: "Visit our boutique in Hawassa or connect with us directly via Phone and Telegram.",
+    locationSubtext: "Visit our boutique in Piassa, Hawassa or connect with us directly via Phone and Telegram.",
     locationCardTitle: "Physical Boutique",
-    locationCardDesc: "Hawassa City, Sidama Region, Ethiopia",
-    locationFloor: "Ground Floor, Faya Qality Boutique",
+    locationCardDesc: "Piassa, Hawassa City, Sidama Region, Ethiopia",
+    locationFloor: "Ground Floor, Piassa, Faya Qality Boutique",
     hoursTitle: "Boutique Operating Hours",
     hoursWeekdaysLabel: "Monday - Friday",
     hoursWeekdaysTime: "9:00 AM – 8:00 PM",
@@ -411,7 +411,7 @@ export const TRANSLATIONS = {
     openMapBtn: "Open in Google Maps / Get Directions",
 
     // Footer
-    footerBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Hawassa.",
+    footerBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Piassa, Hawassa.",
     footerLiveNotice: "✨ Only physically available products are listed in our live catalog.",
     footerCatTitle: "Beauty Categories",
     footerNavTitle: "Navigation",

@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const cleanTelegram = (shopInfo.telegram || '@GTlode').replace('@', '');
+  const cleanTelegram = (shopInfo.telegram || '@obsinanit').replace('@', '');
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   return (

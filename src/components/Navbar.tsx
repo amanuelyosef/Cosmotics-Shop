@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setMobileMenuOpen(false);
   };
 
-  const telegramUsername = (shopInfo.telegram || '@GTlode').replace('@', '');
+  const telegramUsername = (shopInfo.telegram || '@obsinanit').replace('@', '');
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   return (

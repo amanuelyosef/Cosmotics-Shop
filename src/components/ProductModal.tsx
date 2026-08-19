@@ -79,7 +79,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
   const isLowStock = product.stock > 0 && product.stock <= 5;
   const isOutOfStock = product.stock === 0;
-  const cleanTelegram = (shopInfo.telegram || '@GTlode').replace('@', '');
+  const cleanTelegram = (shopInfo.telegram || '@obsinanit').replace('@', '');
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   const nextImage = (e?: React.MouseEvent) => {
