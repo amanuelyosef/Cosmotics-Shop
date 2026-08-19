@@ -128,24 +128,43 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Search Bar */}
           <div className="hidden md:flex flex-1 max-w-xs lg:max-w-md mx-2">
-            <div className="relative w-full">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onNavigate('catalog-results-header');
+              }}
+              className="relative w-full"
+            >
               <input
                 type="text"
                 placeholder={t.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    onNavigate('catalog-results-header');
+                  }
+                }}
                 className="w-full pl-9 pr-8 py-2 bg-stone-50 hover:bg-rose-50/40 focus:bg-white border border-stone-200 focus:border-rose-400 rounded-full text-xs sm:text-sm placeholder:text-stone-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400/20 transition-all"
               />
-              <Search className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <button
+                type="submit"
+                aria-label="Search"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-rose-600 transition-colors cursor-pointer"
+              >
+                <Search className="w-4 h-4" />
+              </button>
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => onSearchChange('')}
                   className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-600 bg-stone-200/60 hover:bg-stone-300 rounded-full w-4 h-4 flex items-center justify-center cursor-pointer"
                 >
                   ✕
                 </button>
               )}
-            </div>
+            </form>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -251,25 +270,44 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile Search Bar (Expandable) */}
         {isSearchExpanded && (
           <div className="md:hidden pb-3 pt-1">
-            <div className="relative w-full">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onNavigate('catalog-results-header');
+              }}
+              className="relative w-full"
+            >
               <input
                 type="text"
                 placeholder={t.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    onNavigate('catalog-results-header');
+                  }
+                }}
                 autoFocus
                 className="w-full pl-9 pr-9 py-2.5 bg-stone-50 border border-stone-200 focus:border-rose-400 rounded-full text-sm focus:outline-hidden focus:ring-2 focus:ring-rose-400/20"
               />
-              <Search className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <button
+                type="submit"
+                aria-label="Search"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-rose-600 transition-colors cursor-pointer"
+              >
+                <Search className="w-4 h-4" />
+              </button>
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => onSearchChange('')}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-600"
                 >
                   ✕
                 </button>
               )}
-            </div>
+            </form>
           </div>
         )}
 

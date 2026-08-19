@@ -20,7 +20,7 @@ export const LocationContact: React.FC<LocationContactProps> = ({ shopInfo }) =>
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   return (
-    <section id="location" className="py-12 sm:py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
+    <section id="location" className="scroll-mt-20 sm:scroll-mt-28 py-12 sm:py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3 px-2">

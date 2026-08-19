@@ -18,7 +18,7 @@ export const ShopInfo: React.FC<ShopInfoProps> = ({ onExplore }) => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-stone-50 via-rose-50/40 to-white border-y border-rose-100/70 overflow-hidden w-full max-w-full">
+    <section id="about" className="scroll-mt-20 sm:scroll-mt-28 py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-stone-50 via-rose-50/40 to-white border-y border-rose-100/70 overflow-hidden w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Story Section */}

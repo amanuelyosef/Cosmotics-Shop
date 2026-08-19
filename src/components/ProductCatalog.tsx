@@ -87,8 +87,15 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
   const outOfStockCount = products.filter(p => p.stock === 0).length;
 
+  const scrollToResults = () => {
+    const el = document.getElementById('catalog-results-header') || document.getElementById('catalog');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="catalog" className="py-8 sm:py-14 lg:py-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
+    <section id="catalog" className="scroll-mt-20 sm:scroll-mt-28 py-8 sm:py-14 lg:py-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3 px-2">
@@ -111,17 +118,36 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 sm:gap-4 items-center w-full">
           
           {/* Main search box (16px base font prevents iOS zoom on focus) */}
-          <div className="md:col-span-8 relative w-full">
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              scrollToResults();
+            }}
+            className="md:col-span-8 relative w-full"
+          >
             <input
               type="text"
               placeholder={t.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  scrollToResults();
+                }
+              }}
               className="w-full pl-10 pr-9 py-2.5 sm:py-3 bg-stone-50 hover:bg-rose-50/30 focus:bg-white border border-stone-200 focus:border-rose-400 rounded-xl sm:rounded-2xl text-base md:text-sm placeholder:text-stone-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400/20 transition-all min-h-[44px]"
             />
-            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <button
+              type="submit"
+              aria-label="Search"
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-rose-600 transition-colors cursor-pointer"
+            >
+              <Search className="w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => onSearchChange('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700 bg-stone-200/70 hover:bg-stone-300 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer"
                 aria-label="Clear search"
@@ -129,7 +155,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 ✕
               </button>
             )}
-          </div>
+          </form>
 
           {/* Sort selector */}
           <div className="md:col-span-4 flex items-center gap-2 w-full">
@@ -186,7 +212,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             {quickTags.map((tag) => (
               <button
                 key={tag}
-                onClick={() => onSearchChange(tag)}
+                onClick={() => {
+                  onSearchChange(tag);
+                  scrollToResults();
+                }}
                 className="px-2 sm:px-2.5 py-1 rounded-lg bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-medium transition-colors cursor-pointer text-[11px] sm:text-xs active:scale-95"
               >
                 #{tag}
@@ -206,7 +235,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       </div>
 
       {/* Catalog Results Counter Bar */}
-      <div className="flex items-center justify-between mb-4 sm:mb-6 px-1 w-full">
+      <div id="catalog-results-header" className="scroll-mt-28 flex items-center justify-between mb-4 sm:mb-6 px-1 w-full">
         <div className="text-xs sm:text-sm font-medium text-stone-700 truncate pr-2">
           {t.showingCount} <span className="font-bold text-stone-900">{filteredProducts.length}</span> {t.productsUnit}
           {selectedCategory !== 'All' && <span> {t.inCategory} <strong>{getCategoryLabel(selectedCategory, t)}</strong></span>}
@@ -229,7 +258,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
       {/* Product Grid */}
       {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 w-full">
+        <div id="catalog-products-grid" className="scroll-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 w-full">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}

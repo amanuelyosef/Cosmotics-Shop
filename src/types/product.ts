@@ -1,4 +1,4 @@
-﻿export type ProductCategory = 
+export type ProductCategory = 
   | 'All'
   | 'Skincare'
   | 'Makeup'
@@ -7,25 +7,40 @@
   | 'Body Care'
   | 'Sun Care';
 
+export interface FirestoreProduct {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  image: string[];
+  boughtPrice: number; // Internal store cost price - kept secure and NOT revealed in frontend UI
+  sellingPrice: number;
+  quantity: number;
+  keyBenefits: string[];
+  featured: boolean;
+  createdAt?: any;
+  updatedAt?: any;
+}
+
 export interface Product {
   id: string;
   name: string;
-  brand: string;
+  brand?: string;
   category: ProductCategory;
   subcategory?: string;
   price: number;
   originalPrice?: number;
   currency: string;
-  stock: number; // Actual stock level
-  rating: number;
-  reviewCount: number;
+  stock: number; // Actual stock level (quantity)
+  rating?: number;
+  reviewCount?: number;
   description: string;
   keyBenefits: string[];
-  ingredients: string[];
-  usageInstructions: string;
-  volumeSize: string;
-  skinTypes: string[];
-  tags: string[];
+  ingredients?: string[];
+  usageInstructions?: string;
+  volumeSize?: string;
+  skinTypes?: string[];
+  tags?: string[];
   images: string[];
   featured?: boolean;
 }

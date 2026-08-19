@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -9,12 +9,29 @@ import { LocationContact } from './components/LocationContact';
 import { Footer } from './components/Footer';
 import { MOCK_PRODUCTS, SHOP_INFO } from './data/mockData';
 import type { Product, ProductCategory } from './types/product';
+import { subscribeToProducts } from './services/productService';
 
 function StorefrontContent() {
-  const [products] = useState<Product[]>(MOCK_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>(MOCK_PRODUCTS);
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    // Real-time synchronization with Firestore DB
+    const unsubscribe = subscribeToProducts(
+      (firestoreProducts) => {
+        if (firestoreProducts && firestoreProducts.length > 0) {
+          setProducts(firestoreProducts);
+        }
+      },
+      (error) => {
+        console.warn('Using local fallback due to connection/permission event:', error);
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
 
   const inStockCount = products.filter(p => p.stock > 0).length;
 
