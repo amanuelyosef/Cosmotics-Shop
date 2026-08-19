@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Noto Serif Ethiopic"', '"Playfair Display"', 'Georgia', 'serif'],
       }
     },
+
   },
   plugins: [],
 }

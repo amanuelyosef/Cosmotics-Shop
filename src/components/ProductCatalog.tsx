@@ -7,6 +7,8 @@ import {
 } from 'lucide-react';
 import type { Product, ProductCategory, SortOption } from '../types/product';
 import { ProductCard } from './ProductCard';
+import { useLanguage } from '../context/LanguageContext';
+import { getCategoryLabel } from '../i18n/translations';
 
 interface ProductCatalogProps {
   products: Product[];
@@ -15,7 +17,7 @@ interface ProductCatalogProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onViewProductDetails: (product: Product) => void;
-  whatsappNumber: string;
+  shopPhone: string;
 }
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
@@ -25,8 +27,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   searchQuery,
   onSearchChange,
   onViewProductDetails,
-  whatsappNumber
+  shopPhone
 }) => {
+  const { t } = useLanguage();
   const [sortBy, setSortBy] = useState<SortOption>('featured');
 
   const categories: ProductCategory[] = [
@@ -85,42 +88,43 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const outOfStockCount = products.filter(p => p.stock === 0).length;
 
   return (
-    <section id="catalog" className="py-12 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="catalog" className="py-8 sm:py-14 lg:py-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
       
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-rose-800 text-xs font-bold tracking-widest uppercase">
+      <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3 px-2">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-rose-100 text-rose-800 text-[11px] sm:text-xs font-bold tracking-widest uppercase">
           <Sparkles className="w-3.5 h-3.5 text-rose-600" />
-          <span>Curated Beauty Catalog</span>
+          <span>{t.catalogTag}</span>
         </div>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900">
-          Available In-Stock Essentials
+        <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
+          {t.catalogTitle}
         </h2>
-        <p className="text-stone-600 text-sm sm:text-base font-light">
-          Real-time physical stock tracked from our Addis Ababa boutique. Out-of-stock items are automatically hidden so you only see products available today.
+        <p className="text-stone-600 text-xs sm:text-base font-light">
+          {t.catalogSubtext}
         </p>
       </div>
 
-      {/* Search and Filters Bar */}
-      <div className="bg-white rounded-3xl p-4 sm:p-6 border border-rose-100/90 shadow-md space-y-5 mb-10">
+      {/* Search and Filters Bar (Contained width) */}
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-rose-100/90 shadow-md space-y-3.5 sm:space-y-5 mb-8 w-full overflow-hidden">
         
         {/* Row 1: Search Input & Sort Dropdown */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 sm:gap-4 items-center w-full">
           
-          {/* Main search box */}
-          <div className="md:col-span-8 relative">
+          {/* Main search box (16px base font prevents iOS zoom on focus) */}
+          <div className="md:col-span-8 relative w-full">
             <input
               type="text"
-              placeholder="Search by product name, brand (COSRX, Ordinary, Fenty), ingredients..."
+              placeholder={t.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full pl-11 pr-10 py-3 bg-stone-50 hover:bg-rose-50/30 focus:bg-white border border-stone-200 focus:border-rose-400 rounded-2xl text-sm placeholder:text-stone-400 focus:outline-hidden focus:ring-3 focus:ring-rose-400/20 transition-all"
+              className="w-full pl-10 pr-9 py-2.5 sm:py-3 bg-stone-50 hover:bg-rose-50/30 focus:bg-white border border-stone-200 focus:border-rose-400 rounded-xl sm:rounded-2xl text-base md:text-sm placeholder:text-stone-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400/20 transition-all min-h-[44px]"
             />
-            <Search className="w-5 h-5 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             {searchQuery && (
               <button
                 onClick={() => onSearchChange('')}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700 bg-stone-200/60 hover:bg-stone-300 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700 bg-stone-200/70 hover:bg-stone-300 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer"
+                aria-label="Clear search"
               >
                 ✕
               </button>
@@ -128,60 +132,62 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </div>
 
           {/* Sort selector */}
-          <div className="md:col-span-4 flex items-center gap-2">
-            <ArrowUpDown className="w-4 h-4 text-stone-400 shrink-0" />
+          <div className="md:col-span-4 flex items-center gap-2 w-full">
+            <ArrowUpDown className="w-4 h-4 text-stone-400 shrink-0 hidden sm:inline" />
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="w-full py-3 px-3.5 bg-stone-50 border border-stone-200 focus:border-rose-400 rounded-2xl text-sm text-stone-700 focus:outline-hidden focus:ring-3 focus:ring-rose-400/20 font-medium cursor-pointer"
+              className="w-full py-2.5 sm:py-3 px-3.5 bg-stone-50 border border-stone-200 focus:border-rose-400 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-stone-700 focus:outline-hidden focus:ring-2 focus:ring-rose-400/20 font-medium cursor-pointer min-h-[44px]"
             >
-              <option value="featured">Featured / Best Match</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-              <option value="stock-high">Highest Stock</option>
+              <option value="featured">{t.sortFeatured}</option>
+              <option value="price-low">{t.sortPriceLow}</option>
+              <option value="price-high">{t.sortPriceHigh}</option>
+              <option value="rating">{t.sortRating}</option>
+              <option value="stock-high">{t.sortStock}</option>
             </select>
           </div>
 
         </div>
 
-        {/* Row 2: Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-100">
-          <span className="text-xs font-bold text-stone-400 uppercase tracking-wider mr-2 hidden sm:inline">
-            Filter:
-          </span>
-          {categories.map((cat) => {
-            const count = products.filter(p => (cat === 'All' || p.category === cat) && p.stock > 0).length;
-            const isActive = selectedCategory === cat;
+        {/* Row 2: Category Filter Tabs (Touch scrollable, contained inside box) */}
+        <div className="pt-2 border-t border-stone-100 w-full overflow-hidden">
+          <div className="overflow-x-auto no-scrollbar flex items-center gap-1.5 sm:gap-2 py-0.5 w-full">
+            <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider mr-1 hidden lg:inline shrink-0">
+              {t.categoriesLabel}
+            </span>
+            {categories.map((cat) => {
+              const count = products.filter(p => (cat === 'All' || p.category === cat) && p.stock > 0).length;
+              const isActive = selectedCategory === cat;
 
-            return (
-              <button
-                key={cat}
-                onClick={() => onSelectCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
-                  isActive
-                    ? 'bg-rose-700 text-white shadow-sm scale-102'
-                    : 'bg-stone-100/90 hover:bg-rose-50 text-stone-700 hover:text-rose-800'
-                }`}
-              >
-                <span>{cat}</span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${isActive ? 'bg-rose-900/40 text-rose-100' : 'bg-stone-200/80 text-stone-600'}`}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={cat}
+                  onClick={() => onSelectCategory(cat)}
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 active:scale-95 min-h-[36px] ${
+                    isActive
+                      ? 'bg-rose-700 text-white shadow-xs'
+                      : 'bg-stone-100/90 hover:bg-rose-50 text-stone-700 hover:text-rose-800'
+                  }`}
+                >
+                  <span>{getCategoryLabel(cat, t)}</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${isActive ? 'bg-rose-900/40 text-rose-100' : 'bg-stone-200/80 text-stone-600'}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Row 3: Quick Keyword Pills & Stock Auto-Hide Status */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 text-xs text-stone-500">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="font-medium text-stone-400 mr-1">Trending Searches:</span>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-1 text-xs text-stone-500 w-full">
+          <div className="flex flex-wrap items-center gap-1 sm:gap-1.5">
+            <span className="font-medium text-stone-400 mr-0.5 text-[11px] sm:text-xs">{t.trendingSearches}</span>
             {quickTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => onSearchChange(tag)}
-                className="px-2.5 py-1 rounded-lg bg-rose-50/60 hover:bg-rose-100 text-rose-700 font-medium transition-colors cursor-pointer"
+                className="px-2 sm:px-2.5 py-1 rounded-lg bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-medium transition-colors cursor-pointer text-[11px] sm:text-xs active:scale-95"
               >
                 #{tag}
               </button>
@@ -189,22 +195,22 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </div>
 
           {/* Automatic Stock Status Indicator */}
-          <div className="flex items-center gap-2 text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200/60 self-start sm:self-auto">
-            <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-600" />
-            <span className="font-semibold">
-              Auto-Hiding {outOfStockCount} Out-of-Stock Products
+          <div className="flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg sm:rounded-xl border border-emerald-200/60 self-start sm:self-auto shrink-0">
+            <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
+            <span className="font-semibold text-[11px] sm:text-xs">
+              {t.autoHidingPill} ({outOfStockCount})
             </span>
           </div>
         </div>
 
       </div>
 
-      {/* Catalog Results Header */}
-      <div className="flex items-center justify-between mb-6 px-1">
-        <div className="text-sm font-medium text-stone-700">
-          Showing <span className="font-bold text-stone-900">{filteredProducts.length}</span> in-stock {filteredProducts.length === 1 ? 'product' : 'products'}
-          {selectedCategory !== 'All' && <span> in <strong>{selectedCategory}</strong></span>}
-          {searchQuery && <span> matching "<strong>{searchQuery}</strong>"</span>}
+      {/* Catalog Results Counter Bar */}
+      <div className="flex items-center justify-between mb-4 sm:mb-6 px-1 w-full">
+        <div className="text-xs sm:text-sm font-medium text-stone-700 truncate pr-2">
+          {t.showingCount} <span className="font-bold text-stone-900">{filteredProducts.length}</span> {t.productsUnit}
+          {selectedCategory !== 'All' && <span> {t.inCategory} <strong>{getCategoryLabel(selectedCategory, t)}</strong></span>}
+          {searchQuery && <span> {t.matching} "<strong>{searchQuery}</strong>"</span>}
         </div>
 
         {/* Reset filter if active */}
@@ -214,34 +220,34 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               onSelectCategory('All');
               onSearchChange('');
             }}
-            className="text-xs font-semibold text-rose-700 hover:text-rose-900 underline cursor-pointer"
+            className="text-xs font-semibold text-rose-700 hover:text-rose-900 underline cursor-pointer p-1 shrink-0"
           >
-            Reset All Filters
+            {t.resetFilters}
           </button>
         )}
       </div>
 
       {/* Product Grid */}
       {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 w-full">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
               onViewDetails={onViewProductDetails}
-              whatsappNumber={whatsappNumber}
+              shopPhone={shopPhone}
             />
           ))}
         </div>
       ) : (
         /* Empty State */
-        <div className="text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-stone-200 max-w-md mx-auto space-y-4">
-          <div className="w-16 h-16 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center mx-auto">
-            <Search className="w-8 h-8" />
+        <div className="text-center py-12 sm:py-16 px-4 bg-white rounded-2xl sm:rounded-3xl border border-dashed border-stone-200 max-w-md mx-auto space-y-4 w-full">
+          <div className="w-14 h-14 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center mx-auto">
+            <Search className="w-7 h-7" />
           </div>
-          <h3 className="font-serif text-xl font-bold text-stone-900">No In-Stock Matches Found</h3>
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-stone-900">{t.noMatchesTitle}</h3>
           <p className="text-xs sm:text-sm text-stone-500">
-            We couldn't find any in-stock items matching your criteria. Try adjusting your search query or category filter.
+            {t.noMatchesDesc}
           </p>
           <button
             onClick={() => {
@@ -250,7 +256,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             }}
             className="px-6 py-2.5 rounded-full bg-rose-700 hover:bg-rose-800 text-white text-xs font-semibold shadow-sm transition-colors cursor-pointer"
           >
-            Clear Search & View All Products
+            {t.clearSearchBtn}
           </button>
         </div>
       )}

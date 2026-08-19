@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProductCatalog } from './components/ProductCatalog';
@@ -9,7 +10,7 @@ import { Footer } from './components/Footer';
 import { MOCK_PRODUCTS, SHOP_INFO } from './data/mockData';
 import type { Product, ProductCategory } from './types/product';
 
-export function App() {
+function StorefrontContent() {
   const [products] = useState<Product[]>(MOCK_PRODUCTS);
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -27,9 +28,9 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50/40 text-stone-800">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-stone-50/40 text-stone-800 relative">
       
-      {/* Navigation Header */}
+      {/* Navigation Header with Language Switcher */}
       <Navbar
         shopInfo={SHOP_INFO}
         selectedCategory={selectedCategory}
@@ -40,35 +41,37 @@ export function App() {
         onNavigate={scrollToSection}
       />
 
-      {/* Hero Showcase Banner */}
-      <Hero
-        shopInfo={SHOP_INFO}
-        inStockCount={inStockCount}
-        onExplore={() => scrollToSection('catalog')}
-        onViewLocation={() => scrollToSection('location')}
-      />
+      <main className="w-full max-w-full overflow-x-hidden flex-1">
+        {/* Hero Showcase Banner */}
+        <Hero
+          shopInfo={SHOP_INFO}
+          inStockCount={inStockCount}
+          onExplore={() => scrollToSection('catalog')}
+          onViewLocation={() => scrollToSection('location')}
+        />
 
-      {/* Main Catalog & Stock Tracking */}
-      <ProductCatalog
-        products={products}
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        onViewProductDetails={setSelectedProduct}
-        whatsappNumber={SHOP_INFO.whatsapp}
-      />
+        {/* Main Catalog & Stock Tracking */}
+        <ProductCatalog
+          products={products}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onViewProductDetails={setSelectedProduct}
+          shopPhone={SHOP_INFO.phone}
+        />
 
-      {/* Shop Information & Trust Story */}
-      <ShopInfo
-        shopInfo={SHOP_INFO}
-        onExplore={() => scrollToSection('catalog')}
-      />
+        {/* Shop Information & Trust Story */}
+        <ShopInfo
+          shopInfo={SHOP_INFO}
+          onExplore={() => scrollToSection('catalog')}
+        />
 
-      {/* Store Location & Interactive Contact Form */}
-      <LocationContact
-        shopInfo={SHOP_INFO}
-      />
+        {/* Store Location & Interactive Map */}
+        <LocationContact
+          shopInfo={SHOP_INFO}
+        />
+      </main>
 
       {/* Footer */}
       <Footer
@@ -77,7 +80,7 @@ export function App() {
         onNavigate={scrollToSection}
       />
 
-      {/* Product Details Modal */}
+      {/* Product Details Modal with Fullscreen Viewer */}
       <ProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
@@ -85,6 +88,14 @@ export function App() {
       />
 
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <LanguageProvider>
+      <StorefrontContent />
+    </LanguageProvider>
   );
 }
 

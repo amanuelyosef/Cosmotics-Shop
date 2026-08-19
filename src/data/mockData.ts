@@ -7,7 +7,7 @@ export const SHOP_INFO: ShopDetails = {
   fullStory: "Founded with an unwavering passion for authentic self-care, Bedhane Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected, stored in temperature-regulated facilities, and tracked live in our inventory.",
   phone: "+251 91 123 4567",
   whatsapp: "+251 91 123 4567",
-  telegram: "@BedhaneCosmetics",
+  telegram: "@GTlode",
   email: "contact@bedhanecosmetics.com",
   location: {
     city: "Addis Ababa, Ethiopia",

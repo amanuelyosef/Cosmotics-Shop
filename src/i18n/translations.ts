@@ -1,0 +1,436 @@
+import type { LanguageOption } from '../types/i18n';
+
+export const LANGUAGE_OPTIONS: LanguageOption[] = [
+  { code: 'am', label: 'Amharic', nativeLabel: 'አማርኛ', flag: '🇪🇹' },
+  { code: 'om', label: 'Afaan Oromoo', nativeLabel: 'Afaan Oromoo', flag: '🇪🇹' },
+  { code: 'en', label: 'English', nativeLabel: 'English', flag: '🇬🇧' },
+];
+
+export const TRANSLATIONS = {
+  am: {
+    // Top banner
+    topBanner: "100% ኦሪጅናል የውበትና የቆዳ እንክብካቤ ምርቶች • አሁን በቦሌ ሱቃችን የሚገኙ",
+    locationTop: "ቦሌ መድኃኔዓለም፣ አዲስ አበባ",
+    
+    // Navbar
+    brandTitle: "በድሃኔ",
+    brandSubtitle: "ኮስሞቲክስ",
+    searchPlaceholder: "የፀሐይ መከላከያ፣ ሴረም፣ ሽቶ፣ ሊፕስቲክ ይፈልጉ...",
+    catalogNav: "የምርት ዝርዝር",
+    aboutNav: "ስለ እኛ",
+    locationNav: "አድራሻና ሰዓት",
+    contactNav: "ያግኙን",
+    telegramOrderNav: "በቴሌግራም ይዘዙ",
+    categoriesLabel: "ምድቦች:",
+    inStockItemsBanner: "አሁን በሱቃችን ያሉ ዕቃዎች",
+    languageLabel: "ቋንቋ",
+
+    // Categories
+    catAll: "ሁሉም",
+    catSkincare: "የቆዳ እንክብካቤ",
+    catMakeup: "ሜካፕ",
+    catHaircare: "የፀጉር እንክብካቤ",
+    catFragrance: "ሽቶ",
+    catBodyCare: "የሰውነት እንክብካቤ",
+    catSunCare: "የፀሐይ መከላከያ (Sunscreen)",
+
+    // Hero
+    heroTrustPill: "100% ኦሪጅናልና አስተማማኝ ዓለም አቀፍ ብራንዶች",
+    heroHeading1: "የተፈጥሮ ውበትዎን ",
+    heroHeadingAccent: "በኦሪጅናል ምርቶች",
+    heroHeading2: " ያድምቁ",
+    heroSubtext: "ወደ በድሃኔ ኮስሞቲክስ እንኳን ደህና መጡ! በአዲስ አበባ ቦሌ የሚገኙ ጥራት ያላቸውን የቆዳ እንክብካቤ፣ ሽቶ፣ ሜካፕ እና የፀጉር ምርቶች በቀጥታ ይመልከቱ።",
+    heroLiveStockTitle: "በሱቃችን ያሉ ምርቶች ብቻ",
+    heroLiveStockDesc: "ያለቁ ዕቃዎች ስለማይታዩ፣ አሁን በሱቃችን ውስጥ ለመግዛትና ለመረከብ ዝግጁ የሆኑትን ብቻ ይመለከታሉ።",
+    heroBrowseBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
+    heroLocationBtn: "የቦሌ ሱቃችንን ይጎብኙ",
+    heroStat1: "100%",
+    heroStat1Label: "ኦሪጅናል ምርቶች",
+    heroStat2: "በዕለቱ",
+    heroStat2Label: "ፈጣን ዴሊቨሪ",
+    heroStat3: "ቦሌ",
+    heroStat3Label: "መድኃኔዓለም ሱቅ",
+    heroBadgeFeatured: "ተወዳጅ ብራንዶች",
+    heroBadgeLive: "በሱቅ ውስጥ አለ",
+    heroDermPill: "በቆዳ ሐኪሞች የተመሰከረላቸው",
+    heroDermSub: "ለቆዳ ተስማሚና አስተማማኝ",
+    heroOpenDaily: "ሁልጊዜ ክፍት ነው",
+
+    // Catalog & Stock
+    catalogTag: "የተመረጡ የውበት ምርቶች",
+    catalogTitle: "አሁን በሱቃችን የሚገኙ ምርቶች",
+    catalogSubtext: "በአዲስ አበባ ቦሌ ሱቃችን በአካል የሚገኙ ምርቶች ቀጥታ ዝርዝር። ያለቁ ምርቶች አይታዩም።",
+    sortLabel: "አስተካክል:",
+    sortFeatured: "ተወዳጅ ምርቶች",
+    sortPriceLow: "ዋጋ፡ ከዝቅተኛ ወደ ከፍተኛ",
+    sortPriceHigh: "ዋጋ፡ ከከፍተኛ ወደ ዝቅተኛ",
+    sortRating: "ከፍተኛ ደረጃ የተሰጣቸው",
+    sortStock: "በብዛት ያሉ",
+    trendingSearches: "ተወዳጅ ፍለጋዎች:",
+    autoHidingPill: "ያለቁ ምርቶች አይታዩም",
+    showingCount: "አሁን ያሉ ምርቶች:",
+    productsUnit: "ምርቶች",
+    inCategory: "በ",
+    matching: "ለ",
+    resetFilters: "ሁሉንም አሳይ",
+    noMatchesTitle: "ምንም ምርት አልተገኘም",
+    noMatchesDesc: "በፈለጉት ቃል የተገኘ ምርት የለም። እባክዎ ሌላ ቃል ይፈልጉ ወይም ምድቡን ይቀይሩ።",
+    clearSearchBtn: "ሁሉንም ምርቶች አሳይ",
+
+    // Product Card
+    inStockBadge: "በሱቅ አለ",
+    lowStockBadge: "ጥቂት ብቻ ቀርቷል!",
+    outOfStockBadge: "አልቋል",
+    quickViewBtn: "ዝርዝር መረጃ ይመልከቱ",
+    availableInBole: "በቦሌ ሱቃችን አለ",
+    cardCallBtn: "በስልክ ይደውሉ",
+    reviewsCount: "አስተያየቶች",
+
+    // Product Modal
+    modalProductOverview: "ስለ ምርቱ ዝርዝር መረጃ",
+    modalStorePrice: "የሱቅ ዋጋ",
+    modalCurrentStock: "የቀረው ብዛት",
+    modalKeyBenefits: "ዋና ዋና ጥቅሞች",
+    modalBestFor: "ተስማሚ የቆዳ አይነቶች:",
+    modalOrderTelegram: "በቴሌግራም ይዘዙ",
+    modalCallDirect: "በስልክ ይደውሉ",
+    modalPickupNote: "ቦሌ መድኃኔዓለም በሚገኘው ሱቃችን መጥተው መውሰድ ወይም አዲስ አበባ ውስጥ በዴሊቨሪ ማዘዝ ይችላሉ።",
+    modalAuthBoxTitle: "የበድሃኔ ኮስሞቲክስ ኦሪጅናልነት ዋስትና",
+    modalAuthBoxDesc: "100% ኦሪጅናል ባች ኮድ ያለው። ጥራቱን በጠበቀ መልኩ በቦሌ ሱቃችን የተያዘ።",
+    modalFullScreenBtn: "ምስሉን በትልቅ ይመልከቱ",
+    modalFullScreenHint: "ምስሉን በትልቅ ለማየት ይጫኑ",
+    modalCloseFullScreen: "ዝጋ",
+
+    // Shop Info
+    aboutTag: "ስለ በድሃኔ ኮስሞቲክስ",
+    aboutTitle: "ኦሪጅናል የውበት እና የቆዳ እንክብካቤ ምርቶች መገኛ።",
+    aboutStory: "በድሃኔ ኮስሞቲክስ 100% ኦሪጅናል የሆኑ የቆዳ፣ የፀጉር፣ የሜካፕ እና የሽቶ ምርቶችን ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች በቀጥታ በማምጣት ለደንበኞቹ ያቀርባል። በሱቃችን የሚገኝ ማንኛውም ዕቃ ጥራቱና ኦሪጅናልነቱ የተረጋገጠ ነው።",
+    aboutPromiseTitle: "100% ኦሪጅናልና የተረጋገጡ የውበት ምርቶች",
+    aboutPerk1Title: "100% ኦሪጅናል ምርቶች",
+    aboutPerk1Desc: "ቀጥታ ከተፈቀደላቸው ዓለም አቀፍ አከፋፋዮች የተረከብናቸው ኦሪጅናል ምርቶች።",
+    aboutPerk2Title: "በሱቅ ያሉ ምርቶች ብቻ",
+    aboutPerk2Desc: "በሱቃችን መደርደሪያ ላይ በአካል የሚገኙ ምርቶች ብቻ በድረ-ገጹ ላይ ይታያሉ።",
+    aboutPerk3Title: "ነፃ የቆዳና የውበት ምክር",
+    aboutPerk3Desc: "እንደ ቆዳዎ አይነት የሚስማማዎትን ምርት በባለሙያዎቻችን ያማክሩ።",
+    aboutPerk4Title: "ፈጣን የከተማ ውስጥ ዴሊቨሪ",
+    aboutPerk4Desc: "አዲስ አበባ ውስጥ በዕለቱ በዴሊቨሪ እናደርሳለን ወይም ከቦሌ ሱቃችን መጥተው መውሰድ ይችላሉ።",
+    aboutCtaBtn: "አሁን ያሉትን ምርቶች ይመልከቱ",
+
+    // Location & Contact
+    locationTag: "አድራሻና የመገኛ ቦታ",
+    locationTitle: "የሱቃችን አድራሻ እና ክፍት የሚሆንበት ሰዓት",
+    locationSubtext: "በቦሌ የሚገኘውን ሱቃችንን መጥተው ይጎብኙ ወይም በስልክ እና በቴሌግራም ያነጋግሩን።",
+    locationCardTitle: "የሱቃችን መገኛ",
+    locationCardDesc: "ቦሌ ክፍለ ከተማ፣ ካሜሩን ጎዳና፣ ከኤድና ሞል ጎን፣ ከመድኃኔዓለም ቤተክርስቲያን ጀርባ",
+    locationFloor: "ምድር ቤት፣ ሱቅ ቁጥር G-14",
+    hoursTitle: "ሱቃችን ክፍት የሚሆንበት ሰዓት",
+    hoursWeekdaysLabel: "ከሰኞ - አርብ",
+    hoursWeekdaysTime: "ከጠዋቱ 3:00 – ማታ 2:00",
+    hoursSaturdayLabel: "ቅዳሜ",
+    hoursSaturdayTime: "ከጠዋቱ 3:30 – ማታ 2:30",
+    hoursSundayLabel: "እሑድ",
+    hoursSundayTime: "ከጠዋቱ 4:00 – ማታ 12:00",
+    phoneCallBtn: "በስልክ ይደውሉ",
+    telegramChatBtn: "በቴሌግራም ያነጋግሩን",
+    openMapBtn: "አድራሻውን በGoogle Maps ይክፈቱ",
+
+    // Footer
+    footerBio: "በአዲስ አበባ ጥራት ያላቸውን ዓለም አቀፍ የቆዳ፣ የፀጉር፣ የሜካፕና የሽቶ ምርቶችን የሚያገኙበት አስተማማኝ የውበት ማዕከል።",
+    footerLiveNotice: "✨ በድረ-ገጻችን ላይ በሱቃችን ውስጥ በአካል የሚገኙ ምርቶች ብቻ ተዘርዝረዋል።",
+    footerCatTitle: "የውበት ምድቦች",
+    footerNavTitle: "አቅጣጫዎች",
+    footerVisitTitle: "ሱቃችንን ይጎብኙ",
+    footerBackToTop: "ወደ ላይ ተመለስ",
+    footerCopyright: "መብቱ በህግ የተጠበቀ ነው። በድሃኔ ኮስሞቲክስ።",
+    telegramChannel: "የቴሌግራም ቻናላችን"
+  },
+
+  om: {
+    // Top banner
+    topBanner: "Qoricha Miidhaginaa %100 Dhugaa Ta'e • Tarree Kuusaa Kallattii (Bakka Booleetti Ammumma Argamu)",
+    locationTop: "Boolee Madhaani’aalam, Finfinnee",
+    
+    // Navbar
+    brandTitle: "Bedhane",
+    brandSubtitle: "Cosmetics",
+    searchPlaceholder: "Eegumsa aduu, seeramii, urgooftuu, lippistiki barbaadaa...",
+    catalogNav: "Tarree Meeshaalee",
+    aboutNav: "Waa'ee Keenya",
+    locationNav: "Teessoo fi Sa'aatii",
+    contactNav: "Nu Quunnamaa",
+    telegramOrderNav: "Telegraamiin Ajajaa",
+    categoriesLabel: "Ramaddiiwwan:",
+    inStockItemsBanner: "Meeshaalee Kuusaa Keessa Jiran",
+    languageLabel: "Afaan",
+
+    // Categories
+    catAll: "Hunda",
+    catSkincare: "Kunuunsa Gogaa",
+    catMakeup: "Meekaappii",
+    catHaircare: "Kunuunsa Rifeensaa",
+    catFragrance: "Urgooftuu",
+    catBodyCare: "Kunuunsa Qaamaa",
+    catSunCare: "Eegumsa Aduu",
+
+    // Hero
+    heroTrustPill: "Biraandota Addunyaa %100 Dhugaa fi Qulqullina Qaban",
+    heroHeading1: "Miidhagina Keessan ",
+    heroHeadingAccent: "Qoricha Amanamaadhaan",
+    heroHeading2: " Calaqqisiisaa.",
+    heroSubtext: "Baga gara Bedhane Cosmetics nagaan dhuftan! Finfinnee Booleetti qoricha gogaa, urgooftuu, meekaappii fi rifeensaa qulqullina qaban asitti argattu.",
+    heroLiveStockTitle: "Wabii Kuusaa Kallattii",
+    heroLiveStockDesc: "Meeshaaleen dhumatan ofumaan waan dhokfatamaniif, wantoota ammaan tana bitachuuf qophii ta'an qofa argitu.",
+    heroBrowseBtn: "Meeshaalee Kuusaa Keessa Jiran Ilaalaa",
+    heroLocationBtn: "Suuqii Boolee Keenya Daawwadhaa",
+    heroStat1: "%100",
+    heroStat1Label: "Meeshaalee Dhugaa",
+    heroStat2: "Guyyuma Sana",
+    heroStat2Label: "Geessuuf Finfinnee",
+    heroStat3: "Boolee",
+    heroStat3Label: "Suuqii Madhaani'aalam",
+    heroBadgeFeatured: "Biraandota Filatamo",
+    heroBadgeLive: "Kuusaa Keessa Jira",
+    heroDermPill: "Ispeeshaalistoota Gogaatiin Qoratame",
+    heroDermSub: "Fayyaalessa fi Amanamaa",
+    heroOpenDaily: "Yeroo Hunda Banaadha",
+
+    // Catalog & Stock
+    catalogTag: "Meeshaalee Miidhaginaa Filataman",
+    catalogTitle: "Meeshaalee Amma Kuusaa Keessa Jiran",
+    catalogSubtext: "Suuqii keenya Boolee Finfinneetti meeshaalee kallattiin argaman. Meeshaaleen dhumatan ofumaan dhokfatamaniiru.",
+    sortLabel: "Tartiibsi:",
+    sortFeatured: "Kan Filataman",
+    sortPriceLow: "Gatii: Gadi-aanaa gara Ol-aanaatti",
+    sortPriceHigh: "Gatii: Ol-aanaa gara Gadi-aanaatti",
+    sortRating: "Jaallatama Ol-aanaa",
+    sortStock: "Kuusaa Ol-aanaa",
+    trendingSearches: "Barbaacha Jaallatamo:",
+    autoHidingPill: "Meeshaaleen dhumatan ofumaan dhokfatamaniiru",
+    showingCount: "Baay'ina meeshaalee kuusaa keessaa:",
+    productsUnit: "meeshaalee",
+    inCategory: "keessaa",
+    matching: "kan wal-simu",
+    resetFilters: "Filtara Qulqulleessi",
+    noMatchesTitle: "Meeshaan Wal-simu Hin Argamne",
+    noMatchesDesc: "Jechoota barbaaddaniin meeshaan kuusaa keessa jiru hin argamne. Maaloo jecha barbaachaa yookiin ramaddii jijjiiraa.",
+    clearSearchBtn: "Meeshaalee Hunda Agarsiisi",
+
+    // Product Card
+    inStockBadge: "Kuusaa Keessa Jira",
+    lowStockBadge: "Muraasatu Hafe!",
+    outOfStockBadge: "Dhumateera",
+    quickViewBtn: "Bal'ina Ilaalaa",
+    availableInBole: "Suuqii Booleetti ni argama",
+    cardCallBtn: "Bilbilaan Nu Quunnamaa",
+    reviewsCount: "yaada",
+
+    // Product Modal
+    modalProductOverview: "Ibsa Meeshaa",
+    modalStorePrice: "Gatii Suuqii Keessaa",
+    modalCurrentStock: "Hamma Kuusaa Ammaa",
+    modalKeyBenefits: "Faayidaalee Ijoo",
+    modalBestFor: "Gosa Gogaa Barbaachisu:",
+    modalOrderTelegram: "Telegraamiin Ammumma Ajajaa",
+    modalCallDirect: "Bilbilaan Nu Quunnamaa",
+    modalPickupNote: "Boolee Madhaani’aalam duuba suuqii keenyarraa fudhachuu ykn Finfinnee guututti guyyuma sana akka isiniif ergamu gochuu dandeessu.",
+    modalAuthBoxTitle: "Wabii Qulqullinaa Bedhane Cosmetics",
+    modalAuthBoxDesc: "Lakkoofsa baachii faabrikaa %100 dhugaa qaba. Suuqii keenya Booleetti haala ho'iinsa isaanii eeggateen kuufama.",
+    modalFullScreenBtn: "Gargaarsa Guutuu",
+    modalFullScreenHint: "Fakkicha bal'inaan ilaaluuf cuqqaalaa",
+    modalCloseFullScreen: "Cufaa",
+
+    // Shop Info
+    aboutTag: "Waa'ee Bedhane Cosmetics",
+    aboutTitle: "Iddoo Miidhaginni Dhugaa Kunuunsa Qulqullina Qabuun Wal-argu.",
+    aboutStory: "Bedhane Cosmetics maamiltoota isaatiif qoricha gogaa, rifeensaa fi miidhaginaa qulqullina ol-aanaa qabu kallattiin warshaalee beekamoo addunyaarraa fida. Meeshaan suuqii keenya keessatti argamu hundi of-eeggannoodhaan qoratamee maamiltootaaf dhiyaata.",
+    aboutPromiseTitle: "Qoricha Miidhaginaa %100 Dhugaa fi Qoratame",
+    aboutPerk1Title: "Meeshaalee %100 Dhugaa",
+    aboutPerk1Desc: "Raabsitoota addunyaa beekamoo fi heyyama qaban irraa kallattiin kan dhufan.",
+    aboutPerk2Title: "Kuusaa Kallattii Mul'atu",
+    aboutPerk2Desc: "Meeshaaleen suuqii keenya keessatti qabatamaan jiran qofatu weebsaayitii irratti mul'ata.",
+    aboutPerk3Title: "Gorsa Miidhaginaa Tolaa",
+    aboutPerk3Desc: "Gosa gogaa keessaniif kan ta'u ogeessota keenya irraa gorsa argadhaa.",
+    aboutPerk4Title: "Dhiyeessa Magaalaa Saffisaa",
+    aboutPerk4Desc: "Finfinnee guututti guyyuma sana ni ergina yookiin suuqii Booleerraa fudhachuu dandeessu.",
+    aboutCtaBtn: "Meeshaalee Amma Jiran Ilaalaa",
+
+    // Location & Contact
+    locationTag: "Teessoo fi Iddoo",
+    locationTitle: "Teessoo Suuqii fi Sa'aatii Banamaa",
+    locationSubtext: "Suuqii keenya Boolee daawwadhaa yookiin bilbilaan fi Telegraamiidhaan nu quunnamaa.",
+    locationCardTitle: "Suuqii Qabatamaa",
+    locationCardDesc: "Kutaa Magaalaa Boolee, Daandii Kaameruun, Edna Mall cinaa, Mana Amantaa Madhaani'aalam duuba",
+    locationFloor: "Dacheerraa, Suuqii Lakkoofsa G-14",
+    hoursTitle: "Sa'aatii Banama Suuqichaa",
+    hoursWeekdaysLabel: "Wiixata - Jimaata",
+    hoursWeekdaysTime: "Ganama 3:00 – Galgala 2:00",
+    hoursSaturdayLabel: "Sanbata",
+    hoursSaturdayTime: "Ganama 3:30 – Galgala 2:30",
+    hoursSundayLabel: "Dilbata",
+    hoursSundayTime: "Ganama 4:00 – Galgala 12:00",
+    phoneCallBtn: "Bilbilaan Nu Quunnamaa",
+    telegramChatBtn: "Telegraamiin Nu Hasaasisaa",
+    openMapBtn: "Google Maps irratti Bani",
+
+    // Footer
+    footerBio: "Finfinneetti qoricha gogaa, rifeensaa, meekaappii fi urgooftuu addunyaa qulqullina qaban kan itti argattan.",
+    footerLiveNotice: "✨ Weebsaayitii keenyarra meeshaaleen suuqii keessa qabatamaan jiran qofatu tarreeffame.",
+    footerCatTitle: "Ramaddiiwwan Miidhaginaa",
+    footerNavTitle: "Qajeelcha",
+    footerVisitTitle: "Suuqii Keenya Daawwadhaa",
+    footerBackToTop: "Gara Olitti Deebi'i",
+    footerCopyright: "Mirgi hundi seeraan eegamaadha. Bedhane Cosmetics.",
+    telegramChannel: "Chaanalii Telegraamii Keenya"
+  },
+
+  en: {
+    // Top banner
+    topBanner: "100% Authentic Luxury Cosmetics & Skincare • Real-time In-Stock Catalog (Ready in Bole)",
+    locationTop: "Bole Medhanialem, Addis Ababa",
+    
+    // Navbar
+    brandTitle: "Bedhane",
+    brandSubtitle: "Cosmetics",
+    searchPlaceholder: "Search sunscreen, serums, perfumes, lipstick...",
+    catalogNav: "Shop Catalog",
+    aboutNav: "About Us",
+    locationNav: "Location & Hours",
+    contactNav: "Contact",
+    telegramOrderNav: "Order on Telegram",
+    categoriesLabel: "Categories:",
+    inStockItemsBanner: "Live In-Stock Catalog",
+    languageLabel: "Language",
+
+    // Categories
+    catAll: "All",
+    catSkincare: "Skincare",
+    catMakeup: "Makeup",
+    catHaircare: "Haircare",
+    catFragrance: "Fragrance",
+    catBodyCare: "Body Care",
+    catSunCare: "Sun Care",
+
+    // Hero
+    heroTrustPill: "100% Guaranteed Authentic Global & Artisan Brands",
+    heroHeading1: "Elevate Your Glow with ",
+    heroHeadingAccent: "Pure Elegance",
+    heroHeading2: " & Care.",
+    heroSubtext: "Welcome to Bedhane Cosmetics — your premier beauty sanctuary in Addis Ababa. Browse verified in-stock skincare, designer fragrances, viral makeup, and haircare essentials.",
+    heroLiveStockTitle: "Live Inventory Guarantee",
+    heroLiveStockDesc: "Out-of-stock items are automatically hidden so you only see what is ready for immediate store pickup or delivery.",
+    heroBrowseBtn: "Browse In-Stock Products",
+    heroLocationBtn: "Visit Bole Boutique",
+    heroStat1: "100%",
+    heroStat1Label: "Genuine Products",
+    heroStat2: "Same Day",
+    heroStat2Label: "Addis Delivery",
+    heroStat3: "Bole Area",
+    heroStat3Label: "Central Boutique",
+    heroBadgeFeatured: "Featured Brand",
+    heroBadgeLive: "Live In Stock",
+    heroDermPill: "Dermatologist Tested",
+    heroDermSub: "Pure & gentle formulas",
+    heroOpenDaily: "Open Daily",
+
+    // Catalog & Stock
+    catalogTag: "Curated Beauty Catalog",
+    catalogTitle: "Available In-Stock Essentials",
+    catalogSubtext: "Real-time physical stock tracked from our Addis Ababa boutique. Out-of-stock items are automatically hidden.",
+    sortLabel: "Sort By:",
+    sortFeatured: "Featured / Best Match",
+    sortPriceLow: "Price: Low to High",
+    sortPriceHigh: "Price: High to Low",
+    sortRating: "Highest Rated",
+    sortStock: "Highest Stock",
+    trendingSearches: "Trending Searches:",
+    autoHidingPill: "Auto-Hiding Out-of-Stock Items",
+    showingCount: "Showing in-stock products:",
+    productsUnit: "products",
+    inCategory: "in",
+    matching: "matching",
+    resetFilters: "Reset All Filters",
+    noMatchesTitle: "No In-Stock Matches Found",
+    noMatchesDesc: "We couldn't find any in-stock items matching your criteria. Try adjusting your search query or category filter.",
+    clearSearchBtn: "Clear Search & View All Products",
+
+    // Product Card
+    inStockBadge: "In Stock",
+    lowStockBadge: "Only few left!",
+    outOfStockBadge: "Out of Stock",
+    quickViewBtn: "Quick View & Details",
+    availableInBole: "available in Bole",
+    cardCallBtn: "Call Store",
+    reviewsCount: "reviews",
+
+    // Product Modal
+    modalProductOverview: "Product Description",
+    modalStorePrice: "Price in Store",
+    modalCurrentStock: "Current Stock",
+    modalKeyBenefits: "Key Benefits",
+    modalBestFor: "Best For:",
+    modalOrderTelegram: "Order via Telegram",
+    modalCallDirect: "Call Boutique",
+    modalPickupNote: "Pick up at Bole Medhanialem or request same-day Addis Ababa delivery.",
+    modalAuthBoxTitle: "Bedhane Authenticity Guarantee",
+    modalAuthBoxDesc: "100% verified genuine batch code. Stored in climate-controlled conditions at our Bole store.",
+    modalFullScreenBtn: "View Fullscreen",
+    modalFullScreenHint: "Click image to view in fullscreen",
+    modalCloseFullScreen: "Close",
+
+    // Shop Info
+    aboutTag: "About Bedhane Cosmetics",
+    aboutTitle: "Where True Radiance Meets Authentic Care.",
+    aboutStory: "Bedhane Cosmetics curates dermatologically tested, premium beauty products sourced directly from verified global brands. We believe true beauty is about confidence, nourishment, and healthy skin. Every product in our catalog is physically inspected and tracked live in our inventory.",
+    aboutPromiseTitle: "100% Genuine Certified Skincare & Beauty",
+    aboutPerk1Title: "100% Genuine & Authentic",
+    aboutPerk1Desc: "Directly imported from verified authorized brand distributors with certified batches.",
+    aboutPerk2Title: "Live In-Store Stock",
+    aboutPerk2Desc: "Only products currently in stock on our shelves are displayed to ensure instant availability.",
+    aboutPerk3Title: "Complimentary Beauty Advice",
+    aboutPerk3Desc: "Get personalized skin analysis and routine recommendations from our in-store specialists.",
+    aboutPerk4Title: "Fast City-Wide Delivery",
+    aboutPerk4Desc: "Same-day delivery across Addis Ababa or convenient pickup at our Bole boutique.",
+    aboutCtaBtn: "Explore Current In-Stock Selection",
+
+    // Location & Contact
+    locationTag: "Find Us in Addis Ababa",
+    locationTitle: "Store Location & Operating Hours",
+    locationSubtext: "Visit our boutique in Bole, Addis Ababa or connect with us directly via Phone and Telegram.",
+    locationCardTitle: "Physical Boutique",
+    locationCardDesc: "Bole Subcity, Cameroon Street, Next to Edna Mall / Medhanialem Area, Behind Bole Medhanialem Cathedral",
+    locationFloor: "Ground Floor, Shop G-14",
+    hoursTitle: "Boutique Operating Hours",
+    hoursWeekdaysLabel: "Monday - Friday",
+    hoursWeekdaysTime: "9:00 AM – 8:00 PM",
+    hoursSaturdayLabel: "Saturday",
+    hoursSaturdayTime: "9:30 AM – 8:30 PM",
+    hoursSundayLabel: "Sunday",
+    hoursSundayTime: "10:00 AM – 6:00 PM",
+    phoneCallBtn: "Phone Call",
+    telegramChatBtn: "Telegram Chat",
+    openMapBtn: "Open in Google Maps / Get Directions",
+
+    // Footer
+    footerBio: "Your premier destination for 100% authentic international and artisan skincare, makeup, fragrances, and haircare in Addis Ababa.",
+    footerLiveNotice: "✨ Only physically available products are listed in our live catalog.",
+    footerCatTitle: "Beauty Categories",
+    footerNavTitle: "Navigation",
+    footerVisitTitle: "Visit Our Boutique",
+    footerBackToTop: "Back to Top",
+    footerCopyright: "All rights reserved. Bedhane Cosmetics.",
+    telegramChannel: "Our Telegram Channel"
+  }
+};
+
+export const getCategoryLabel = (category: string, t: typeof TRANSLATIONS['am']): string => {
+  switch (category) {
+    case 'All': return t.catAll;
+    case 'Skincare': return t.catSkincare;
+    case 'Makeup': return t.catMakeup;
+    case 'Haircare': return t.catHaircare;
+    case 'Fragrance': return t.catFragrance;
+    case 'Body Care': return t.catBodyCare;
+    case 'Sun Care': return t.catSunCare;
+    default: return category;
+  }
+};
