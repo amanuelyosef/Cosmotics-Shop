@@ -65,8 +65,7 @@ export function mapFirestoreDocToProduct(docId: string, data: Partial<FirestoreP
     volumeSize: data.volumeSize || undefined,
     skinTypes: Array.isArray(data.skinTypes) ? data.skinTypes.filter(Boolean) : undefined,
     tags: Array.isArray(data.tags) ? data.tags.filter(Boolean) : undefined,
-    images,
-    featured: Boolean(data.featured)
+    images
     // NOTE: `boughtPrice`, `createdAt`, `updatedAt` are deliberately not included here!
   };
 }

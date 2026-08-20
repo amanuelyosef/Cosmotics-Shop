@@ -81,8 +81,7 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1608248597359-bb5e71465e3b?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-02",
@@ -117,8 +116,7 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-03",
@@ -151,8 +149,7 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1608248597359-bb5e71465e3b?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-04",
@@ -186,8 +183,7 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-05",
@@ -222,8 +218,7 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-06",

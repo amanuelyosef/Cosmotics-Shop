@@ -14,11 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Mock products strictly matching the required Firestore schema
+// Mock products strictly matching the required Firestore schema (without featured)
 const PRODUCTS_DATA = [
   {
     id: "prod-01",
     name: "Advanced Snail 96 Mucin Power Essence",
+    brand: "COSRX",
     category: "Skincare",
     description: "Formulated with 96.3% Snail Secretion Filtrate, this lightweight essence quickly absorbs into skin to hydrate deeply, repair damaged skin barriers, and deliver a radiant natural glow without heavy stickiness.",
     image: [
@@ -33,12 +34,12 @@ const PRODUCTS_DATA = [
       "Soothes redness, irritation, and blemishes",
       "Enhances skin elasticity and collagen vitality",
       "Non-comedogenic and hypoallergenic"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-02",
     name: "Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++",
+    brand: "SKIN1004",
     category: "Sun Care",
     description: "An ultra-lightweight, non-greasy chemical sunscreen that leaves zero white cast. Blended with Madagascar Centella Asiatica and multiple molecular weights of Hyaluronic Acid to soothe while providing maximum UV shielding.",
     image: [
@@ -53,12 +54,12 @@ const PRODUCTS_DATA = [
       "Serum-like dewy finish with zero white cast",
       "Calms sensitive and sun-irritated skin",
       "Reef-safe and non-sticky under makeup"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-03",
     name: "Niacinamide 10% + Zinc 1% Blemish Formula",
+    brand: "The Ordinary",
     category: "Skincare",
     description: "High-strength vitamin and mineral blemish formula. Niacinamide (Vitamin B3) visibly balances oil sebum production, refines pores, and evens skin tone while Zinc PCA calms inflammation.",
     image: [
@@ -73,12 +74,12 @@ const PRODUCTS_DATA = [
       "Minimizes enlarged pores and uneven texture",
       "Brightens post-inflammatory hyperpigmentation",
       "Lightweight water-based serum"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-04",
     name: "Rouge Velvet Matte Long-Wear Lipstick",
+    brand: "Fenty Beauty",
     category: "Makeup",
     description: "A show-stopping red matte lipstick that delivers hyper-pigmented color in a single stroke with a weightless, cushiony feel that stays comfortable all day.",
     image: [
@@ -93,12 +94,12 @@ const PRODUCTS_DATA = [
       "Richly pigmented velvety finish without drying",
       "Precision bullet applicator for crisp lines",
       "Universal shade flattering across diverse skin tones"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-05",
     name: "Baccarat Rouge 540 Eau de Parfum",
+    brand: "Maison Francis Kurkdjian",
     category: "Fragrance",
     description: "An iconic luminous and intense oriental floral fragrance with an alchemy of breezy jasmine facets, radiant saffron, ambergris notes, and cedarwood base tones.",
     image: [
@@ -113,12 +114,12 @@ const PRODUCTS_DATA = [
       "Rich warm amber floral profile with saffron & cedar",
       "Mastercrafted in France with authentic batch code verified",
       "Unisex signature fragrance"
-    ],
-    featured: true
+    ]
   },
   {
     id: "prod-06",
     name: "Brazilian Bum Bum Ultra-Nourishing Body Cream",
+    brand: "Sol de Janeiro",
     category: "Body Care",
     description: "Award-winning fast-absorbing body cream with caffeine-rich Guaraná extract to visibly tighten and firm skin while infusing body with irresistible Pistachio and Salted Caramel fragrance.",
     image: [
@@ -133,12 +134,12 @@ const PRODUCTS_DATA = [
       "Deeply hydrates with Cupuaçu butter and Açaí oil",
       "Irresistible Cheirosa 62 gourmand aroma",
       "Fast-absorbing with subtle radiant shimmer"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-07",
     name: "No. 7 Bonding Hair Treatment Oil",
+    brand: "Olaplex",
     category: "Haircare",
     description: "A highly-concentrated, weightless reparative styling oil that dramatically increases shine, softness, and color vibrancy while minimizing flyaways and protecting from heat up to 450°F.",
     image: [
@@ -153,12 +154,12 @@ const PRODUCTS_DATA = [
       "Heat protection up to 232°C / 450°F",
       "Reduces frizz and tames flyaways instantly",
       "Ultra-lightweight formula that will not weigh down curls or fine hair"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-08",
     name: "Soft Pinch Liquid Blush (Shade: Hope)",
+    brand: "Rare Beauty",
     category: "Makeup",
     description: "An airy, lightweight liquid blush that blends seamlessly for a soft, healthy flush. Infused with long-lasting color pigments for all-day radiance without fading.",
     image: [
@@ -173,12 +174,12 @@ const PRODUCTS_DATA = [
       "Intense pigment: 1 dot is enough for both cheeks",
       "Botanical blend of Lotus, Gardenia, and Water Lily",
       "Dermatologist tested and cruelty-free"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-09",
     name: "CeraVe Hydrating Facial Cleanser for Normal to Dry Skin",
+    brand: "CeraVe",
     category: "Skincare",
     description: "Developed with dermatologists, this unique lotion-like formula gently cleanses, hydrates, and helps restore the protective skin barrier with three essential ceramides and hyaluronic acid.",
     image: [
@@ -193,12 +194,12 @@ const PRODUCTS_DATA = [
       "3 Essential Ceramides (1, 3, 6-II) to restore barrier",
       "MVE Technology for continuous 24-hour hydration",
       "Fragrance-free, non-foaming, non-irritating"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-10",
     name: "Santorini Sunrise Nourishing Body Butter",
+    brand: "Sol & Bloom",
     category: "Body Care",
     description: "Whipped rich shea and mango butter infused with citrus blossom and Mediterranean sea minerals for silky smooth body hydration.",
     image: [
@@ -213,12 +214,12 @@ const PRODUCTS_DATA = [
       "Whipped airy texture that melts on contact",
       "Natural scent of blood orange, bergamot & warm vanilla",
       "100% Vegan and Paraben-free"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-11",
     name: "Rosemary & Mint Scalp & Hair Strengthening Oil",
+    brand: "Mielle Organics",
     category: "Haircare",
     description: "Infused with Biotin and over 30 essential oils and extracts, this organic hair oil promotes hair length retention, deeply nourishes hair follicles, and conditions dry scalps.",
     image: [
@@ -233,12 +234,12 @@ const PRODUCTS_DATA = [
       "Soothes dry, itchy scalp and nourishes split ends",
       "Infused with Biotin and refreshing Rosemary Mint aroma",
       "Safe for natural hair, protective styles, and braids"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-12",
     name: "Good Girl Eau de Parfum",
+    brand: "Carolina Herrera",
     category: "Fragrance",
     description: "A daring yet sophisticated fragrance defined by the contrasting qualities of sweet, alluring Jasmine, rich Cacao, and intoxicating Tonka bean.",
     image: [
@@ -253,12 +254,12 @@ const PRODUCTS_DATA = [
       "Long-lasting evening fragrance with bold projection",
       "Sensual gourmand floral notes",
       "Original packaging with batch check verified"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-oos-1",
     name: "AHA 30% + BHA 2% Peeling Solution",
+    brand: "The Ordinary",
     category: "Skincare",
     description: "10-minute exfoliating facial mask that brightens and unclogs pores.",
     image: [
@@ -270,12 +271,12 @@ const PRODUCTS_DATA = [
     keyBenefits: [
       "Deep chemical exfoliation",
       "Evens skin tone"
-    ],
-    featured: false
+    ]
   },
   {
     id: "prod-oos-2",
     name: "Lip Sleeping Mask (Berry)",
+    brand: "Laneige",
     category: "Skincare",
     description: "Overnight leave-on lip mask that replenishes moisture to chapped lips.",
     image: [
@@ -287,8 +288,7 @@ const PRODUCTS_DATA = [
     keyBenefits: [
       "Softens flakiness",
       "Vitamin C rich"
-    ],
-    featured: false
+    ]
   }
 ];
 
@@ -309,6 +309,7 @@ async function seedDatabase() {
       const payload = {
         id: item.id,
         name: item.name,
+        brand: item.brand,
         category: item.category,
         description: item.description,
         image: item.image,
@@ -316,13 +317,13 @@ async function seedDatabase() {
         sellingPrice: item.sellingPrice,
         quantity: item.quantity,
         keyBenefits: item.keyBenefits,
-        featured: Boolean(item.featured),
         createdAt: now,
         updatedAt: now
       };
 
-      await setDoc(docRef, payload, { merge: true });
-      console.log(`✔ Successfully uploaded product [${item.id}]: "${item.name}"`);
+      // setDoc replaces the document completely, removing old fields like 'featured'
+      await setDoc(docRef, payload);
+      console.log(`✔ Successfully uploaded product [${item.id}]: "${item.name}" (Brand: ${item.brand})`);
       successCount++;
     } catch (err) {
       console.error(`✖ Failed to upload product [${item.id}]:`, err);
@@ -341,7 +342,7 @@ async function seedDatabase() {
   console.log(`Verified: Found ${snapshot.size} documents in Firestore.`);
   
   if (snapshot.size > 0) {
-    console.log("\nSample Firestore Document Structure:");
+    console.log("\nSample Firestore Document Structure without featured:");
     const firstDoc = snapshot.docs[0].data();
     console.log(JSON.stringify(firstDoc, null, 2));
   }

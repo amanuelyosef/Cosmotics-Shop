@@ -10,6 +10,7 @@ export type ProductCategory =
 export interface FirestoreProduct {
   id: string;
   name: string;
+  brand: string;
   category: string;
   description: string;
   image: string[];
@@ -17,7 +18,6 @@ export interface FirestoreProduct {
   sellingPrice: number;
   quantity: number;
   keyBenefits: string[];
-  featured: boolean;
   createdAt?: any;
   updatedAt?: any;
 }
@@ -42,7 +42,6 @@ export interface Product {
   skinTypes?: string[];
   tags?: string[];
   images: string[];
-  featured?: boolean;
 }
 
 export interface StoreLocation {
@@ -78,4 +77,4 @@ export interface ShopDetails {
   }[];
 }
 
-export type SortOption = 'featured' | 'price-low' | 'price-high' | 'rating' | 'stock-high' | 'newest';
+export type SortOption = 'default' | 'price-low' | 'price-high' | 'rating' | 'stock-high';

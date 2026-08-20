@@ -30,7 +30,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   shopPhone
 }) => {
   const { t } = useLanguage();
-  const [sortBy, setSortBy] = useState<SortOption>('featured');
+  const [sortBy, setSortBy] = useState<SortOption>('default');
 
   const categories: ProductCategory[] = [
     'All',
@@ -84,8 +84,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       if (sortBy === 'price-high') return b.price - a.price;
       if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
       if (sortBy === 'stock-high') return b.stock - a.stock;
-      if (sortBy === 'newest') return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
-      return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+      return 0;
     });
   }, [products, selectedCategory, searchQuery, sortBy]);
 
@@ -169,7 +168,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               className="w-full py-2.5 sm:py-3 px-3.5 bg-stone-50 border border-stone-200 focus:border-rose-400 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-stone-700 focus:outline-hidden focus:ring-2 focus:ring-rose-400/20 font-medium cursor-pointer min-h-[44px]"
             >
-              <option value="featured">{t.sortFeatured}</option>
+              <option value="default">{t.sortDefault}</option>
               <option value="price-low">{t.sortPriceLow}</option>
               <option value="price-high">{t.sortPriceHigh}</option>
               <option value="rating">{t.sortRating}</option>
