@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   MapPin, 
   Phone, 
-  Mail, 
   ArrowUp
 } from 'lucide-react';
 import type { ShopDetails, ProductCategory } from '../types/product';
@@ -158,10 +157,6 @@ export const Footer: React.FC<FooterProps> = ({
                 >
                   {shopInfo.telegram}
                 </a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-rose-400 shrink-0" />
-                <span>{shopInfo.email}</span>
               </div>
             </div>
           </div>
