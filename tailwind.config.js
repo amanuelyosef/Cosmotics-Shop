@@ -36,8 +36,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        serif: ['"Noto Serif Ethiopic"', '"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'Nyala', 'Kefa', 'system-ui', 'sans-serif'],
+        serif: ['"Noto Sans Ethiopic"', '"Noto Serif Ethiopic"', '"Playfair Display"', 'Georgia', 'serif'],
       }
     },
   },

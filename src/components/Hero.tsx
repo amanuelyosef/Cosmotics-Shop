@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Main Headline */}
             <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-stone-900 leading-[1.25]">
               {t.heroHeading1}
-              <span className="text-rose-700 italic">{t.heroHeadingAccent}</span>
+              <span className="text-rose-700 font-extrabold">{t.heroHeadingAccent}</span>
               {t.heroHeading2}
             </h1>
 

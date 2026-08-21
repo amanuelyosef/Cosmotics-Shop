@@ -35,7 +35,10 @@ export const Footer: React.FC<FooterProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const cleanTelegram = (shopInfo.telegram || '@obsinanit').replace('@', '');
+  const cleanTelegram = (shopInfo.telegram || '@Qaaliti').replace('@', '');
+  const telegramChannelUrl = shopInfo.telegramChannel?.startsWith('http')
+    ? shopInfo.telegramChannel
+    : `https://t.me/${(shopInfo.telegramChannel || 'qaaliti1').replace('@', '')}`;
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   return (
@@ -123,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href={`https://t.me/${cleanTelegram}`}
+                  href={telegramChannelUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-sky-400 transition-colors text-sky-300 inline-flex items-center gap-1.5 py-0.5 font-medium"

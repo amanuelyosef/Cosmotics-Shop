@@ -66,8 +66,8 @@ export interface ShopDetails {
   fullStory: string;
   phone: string;
   whatsapp: string;
-  email: string;
   telegram?: string;
+  telegramChannel?: string;
   location: StoreLocation;
   hours: BusinessHours[];
   perks: {

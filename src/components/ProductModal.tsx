@@ -17,6 +17,7 @@ import type { Product, ShopDetails } from '../types/product';
 import { TelegramIcon } from './TelegramIcon';
 import { useLanguage } from '../context/LanguageContext';
 import { getCategoryLabel } from '../i18n/translations';
+import { getOptimizedImageUrl } from '../utils/imageUtils';
 
 interface ProductModalProps {
   product: Product | null;
@@ -79,7 +80,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
   const isLowStock = product.stock > 0 && product.stock <= 5;
   const isOutOfStock = product.stock === 0;
-  const cleanTelegram = (shopInfo.telegram || '@obsinanit').replace('@', '');
+  const cleanTelegram = (shopInfo.telegram || '@Qaaliti').replace('@', '');
   const cleanPhone = shopInfo.phone.replace(/\s+/g, '');
 
   const nextImage = (e?: React.MouseEvent) => {
@@ -131,9 +132,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   title={t.modalFullScreenHint}
                 >
                   <img
-                    src={product.images[activeImageIndex] || product.images[0]}
+                    src={getOptimizedImageUrl(product.images[activeImageIndex] || product.images[0], 800)}
                     alt={product.name}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    decoding="async"
                   />
                   
                   {/* Stock Badge Overlay */}
@@ -174,7 +176,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                           activeImageIndex === idx ? 'border-rose-600 scale-95 shadow-md' : 'border-stone-200 opacity-70 hover:opacity-100'
                         }`}
                       >
-                        <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
+                        <img src={getOptimizedImageUrl(img, 160)} alt="thumbnail" className="w-full h-full object-cover" decoding="async" />
                       </button>
                     ))}
                   </div>
@@ -347,7 +349,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
       {/* FULL-SCREEN IMMERSIVE LIGHTBOX VIEWER (Using React Portal directly into body) */}
       {isFullScreen && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-[100] bg-stone-950/95 backdrop-blur-lg flex flex-col items-center justify-between p-3 sm:p-6 animate-fadeIn select-none"
+          className="fixed inset-0 z-[100] bg-stone-950/95 flex flex-col items-center justify-between p-3 sm:p-6 animate-fadeIn select-none isolate"
           onClick={() => setIsFullScreen(false)}
         >
           
@@ -397,9 +399,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             {/* High-res Image Container */}
             <div className="w-full h-full flex items-center justify-center p-1">
               <img
-                src={product.images[activeImageIndex] || product.images[0]}
+                src={getOptimizedImageUrl(product.images[activeImageIndex] || product.images[0], 1400)}
                 alt={product.name}
-                className="max-h-[70vh] sm:max-h-[75vh] max-w-[92vw] sm:max-w-[90vw] object-contain rounded-2xl shadow-2xl"
+                className="max-h-[70vh] sm:max-h-[75vh] max-w-[92vw] sm:max-w-[90vw] object-contain rounded-2xl border border-stone-800/80 bg-stone-900/40"
+                decoding="async"
               />
             </div>
 
@@ -422,7 +425,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             {product.images.length > 1 ? (
-              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto p-1.5 sm:p-2 bg-stone-900/80 border border-stone-800 rounded-2xl backdrop-blur-md no-scrollbar">
+              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto p-1.5 sm:p-2 bg-stone-900/80 border border-stone-800 rounded-2xl no-scrollbar">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
@@ -431,7 +434,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                       activeImageIndex === idx ? 'border-rose-500 scale-105 shadow-lg' : 'border-stone-700 opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
+                    <img src={getOptimizedImageUrl(img, 160)} alt="thumbnail" className="w-full h-full object-cover" decoding="async" />
                   </button>
                 ))}
               </div>

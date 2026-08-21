@@ -3,6 +3,7 @@ import { Star, Eye, Sparkles, Check, AlertCircle, Phone } from 'lucide-react';
 import type { Product } from '../types/product';
 import { useLanguage } from '../context/LanguageContext';
 import { getCategoryLabel } from '../i18n/translations';
+import { getOptimizedImageUrl } from '../utils/imageUtils';
 
 interface ProductCardProps {
   product: Product;
@@ -30,10 +31,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Image Container */}
       <div className="relative aspect-square w-full overflow-hidden bg-stone-100">
         <img
-          src={product.images[0] || 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'}
+          src={getOptimizedImageUrl(product.images[0], 600)}
           alt={product.name}
           className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
           loading="lazy"
+          decoding="async"
         />
 
         <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
